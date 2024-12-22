@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NavBar() {
   /* TODO
    * Hover animations
@@ -14,12 +16,20 @@ export default function NavBar() {
           font-semibold text-[#dadfe2]
         "
     >
-      <a className="mr-auto">HOME</a>
-      <a>ABOUT</a>
+      <Link className="mr-auto uppercase tracking-wider" href="/">
+        Home
+      </Link>
+      <Link className="uppercase tracking-wider" href="/about">
+        About
+      </Link>
       <span className="font-black">•</span>
-      <a>PROJECTS</a>
+      <Link className="uppercase tracking-wider" href="/projects">
+        Projects
+      </Link>
       <span className="font-black">•</span>
-      <a>CONTACT</a>
+      <Link className="uppercase tracking-wider" href="/contact">
+        Contact
+      </Link>
     </nav>
   );
 }
