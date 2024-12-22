@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NavBar from "./navbar";
 
 export const metadata = {
   title: "Next.js",
@@ -8,24 +9,8 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="font-[family-name:var(--font-geist-sans)] bg-[url('/hero-template.jpg')] bg-fixed min-h-screen">
-      <header className="">
-        <div className="">
-          <nav
-            className="
-            flex justify-end gap-10 
-            m-0 mt-2 px-5
-            absolute right-0 left-0 z-10
-            font-semibold text-[#dadfe2]
-          "
-          >
-            <a className="mr-auto">HOME</a>
-            <a>ABOUT</a>
-            <span className="font-black">•</span>
-            <a>PROJECT</a>
-            <span className="font-black">•</span>
-            <a>CONTACT</a>
-          </nav>
-        </div>
+      <header>
+        <NavBar />
       </header>
       <main className="min-h-screen content-center">
         {/*
