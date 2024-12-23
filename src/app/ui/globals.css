@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navLink {
+  @apply uppercase tracking-wider  text-center;
+  width: 8em;
+}
+
+.navLink:hover::after {
+  background-color: #dadfe2;
+  border-radius: 10px;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(1);
+  transition: transform 0.5s ease-out;
+}
+
+.navLink::after {
+  content: "";
+  display: block;
+  transform: scaleX(0);
+}
