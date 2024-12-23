@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Github from "../../../public/github.svg";
+import Linkedin from "../../../public/linkedin.svg";
 
 export default function Footer() {
   /* TODO:
@@ -9,6 +10,8 @@ export default function Footer() {
 
   const dateYear = new Date().getFullYear();
 
+  const socialStyles = "text-4xl text-[#dadfe2]]";
+
   return (
     <footer className="bg-[#243c71]/75 text-[#dadfe2] py-5 bottom-0 text-center">
       <div className="flex flex-row space-x-5 pb-2 content-center justify-center">
@@ -17,11 +20,9 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            src="/linkedin.svg"
-            alt="linkedin logo"
-            height={32}
-            width={32}
+          <Linkedin
+            className={socialStyles}
+            alt="LinkedIn icon that redirects to my personal page"
           />
         </a>
         <a
@@ -29,7 +30,10 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/github.svg" alt="linkedin logo" height={32} width={32} />
+          <Github
+            className={socialStyles}
+            alt="Github icon that redirects to my personal profile"
+          />
         </a>
       </div>
       <small>

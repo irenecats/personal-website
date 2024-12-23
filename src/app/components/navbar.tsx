@@ -1,11 +1,13 @@
 import Link from "next/link";
+import Sparkle from "../../../public/round-four-star-fill.svg";
+//import Sparkle from "../../../public/point-four-star-fill.svg";
 
 export default function NavBar() {
   /* TODO
    * Try several separator options
    * Extract link elements and span element to separate components, add them as child so the layout has more context of the structurre
    */
-
+  const socialStyles = "text-1xl text-[#dadfe2]] mt-0.5";
   return (
     <header>
       <nav
@@ -22,12 +24,17 @@ export default function NavBar() {
         <Link className="navLink" href="/about">
           About
         </Link>
-
-        <span className="font-black cursor-default">•</span>
+        <Sparkle
+          className={socialStyles}
+          alt="LinkedIn icon that redirects to my personal page"
+        />
         <Link className="navLink" href="/projects">
           Projects
         </Link>
-        <span className="font-black cursor-default">•</span>
+        <Sparkle
+          className={socialStyles}
+          alt="LinkedIn icon that redirects to my personal page"
+        />
         <Link className="navLink" href="/contact">
           Contact
         </Link>
