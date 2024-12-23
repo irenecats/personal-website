@@ -1,13 +1,11 @@
-import Link from "next/link";
-import Sparkle from "../../../public/round-four-star-fill.svg";
-//import Sparkle from "../../../public/point-four-star-fill.svg";
+import { ReactNode } from "react";
+import Separator, { SeparatorTypeEnum } from "./nav-separator";
 
-export default function NavBar() {
-  /* TODO
-   * Try several separator options
-   * Extract link elements and span element to separate components, add them as child so the layout has more context of the structurre
-   */
-  const socialStyles = "text-1xl text-[#dadfe2]] mt-0.5";
+interface NavBarProps {
+  children: ReactNode[];
+}
+
+export default function NavBar({ children }: NavBarProps) {
   return (
     <header>
       <nav
@@ -17,27 +15,20 @@ export default function NavBar() {
           font-semibold text-[#dadfe2]
         "
       >
-        <Link className="navLink mr-auto " href="/">
-          Home
-        </Link>
-
-        <Link className="navLink" href="/about">
-          About
-        </Link>
-        <Sparkle
-          className={socialStyles}
-          alt="LinkedIn icon that redirects to my personal page"
-        />
-        <Link className="navLink" href="/projects">
-          Projects
-        </Link>
-        <Sparkle
-          className={socialStyles}
-          alt="LinkedIn icon that redirects to my personal page"
-        />
-        <Link className="navLink" href="/contact">
-          Contact
-        </Link>
+        {children.map((elem: ReactNode, index: number) => {
+          const separator =
+            index > 1 ? (
+              <Separator separatorType={SeparatorTypeEnum.SparkleRound} />
+            ) : (
+              ""
+            );
+          return (
+            <>
+              {separator}
+              {elem}
+            </>
+          );
+        })}
       </nav>
     </header>
   );

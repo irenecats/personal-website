@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./ui/globals.css";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
+import NavLink from "./components/nav-link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased  
         font-[family-name:var(--font-geist-sans)] bg-[url('/hero-template.jpg')] bg-fixed `}
       >
-        <NavBar />
+        <NavBar>
+          <NavLink className="mr-auto " title="Home" href="/" />
+          <NavLink title="About" href="/about" />
+          <NavLink title="Projects" href="/projects" />
+          <NavLink title="Contact" href="/contact" />
+        </NavBar>
         <main className="min-h-screen p-4 pt-8">{children}</main>
         <Footer />
       </body>
