@@ -27,12 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  
+        font-[family-name:var(--font-geist-sans)] bg-[url('/hero-template.jpg')] bg-fixed `}
       >
-        <header>
-          <NavBar />
-        </header>
-        {children}
+        <NavBar />
+        <main className="min-h-screen p-4 pt-8">{children}</main>
         <Footer />
       </body>
     </html>

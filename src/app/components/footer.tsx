@@ -2,12 +2,15 @@ import Image from "next/image";
 
 export default function Footer() {
   /* TODO:
-   * Hover animations
    * Minimal nav bar (?)
+   * Create button icon element, use icons without borders and add style with css
+   * Hover animations
    */
 
+  const dateYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#243c71] text-[#dadfe2] py-5 bottom-0 text-center">
+    <footer className="bg-[#243c71]/75 text-[#dadfe2] py-5 bottom-0 text-center">
       <div className="flex flex-row space-x-5 pb-2 content-center justify-center">
         <a
           href="https://www.linkedin.com/in/irene-clemente-aracil"
@@ -30,7 +33,7 @@ export default function Footer() {
         </a>
       </div>
       <small>
-        &#9400; Copyright 2018, Irene Clemente Aracil. All rights reserved
+        &#9400; Copyright {dateYear}, Irene Clemente Aracil. All rights reserved
       </small>
     </footer>
   );

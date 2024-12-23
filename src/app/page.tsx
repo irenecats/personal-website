@@ -5,12 +5,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main
-      className="
-    font-[family-name:var(--font-geist-sans)] 
-    bg-[url('/hero-template.jpg')] bg-fixed 
-    min-h-screen"
-    >
+    <>
       {/*
         <p className="mt-[500] min-w-[50%]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
@@ -22,6 +17,6 @@ export default function Home() {
           vulputate efficitur nibh quis euismod.
         </p>
         */}
-    </main>
+    </>
   );
 }
