@@ -1,7 +1,6 @@
 import SparkleRound from "../../../public/round-four-star-fill.svg";
 import SparklePoint from "../../../public/point-four-star-fill.svg";
 import CircleFill from "../../../public/circle-fill.svg";
-import Circle from "../../../public/circle.svg";
 import { ReactElement } from "react";
 
 export enum SeparatorTypeEnum {

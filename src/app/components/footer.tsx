@@ -10,10 +10,11 @@ export default function Footer() {
 
   const dateYear = new Date().getFullYear();
 
-  const socialStyles = "text-4xl text-[#dadfe2]]";
+  const socialStyles =
+    "text-4xl text-[#dadfe2]] transition-colors ease-in-out duration-150 hover:text-[#9eadb9]";
 
   return (
-    <footer className="bg-[#243c71]/75 text-[#dadfe2] py-5 bottom-0 text-center">
+    <footer className="bg-[#243c71]/75 text-[#dadfe2]  py-5 bottom-0 text-center">
       <div className="flex flex-row space-x-5 pb-2 content-center justify-center">
         <a
           href="https://www.linkedin.com/in/irene-clemente-aracil"
