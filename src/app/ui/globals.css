@@ -21,3 +21,18 @@
   display: block;
   transform: scaleX(0);
 }
+
+.bg-blur {
+  @apply bg-[#243c71]/75 text-[#dadfe2] rounded-xl;
+
+  backdrop-filter: blur(10px);
+}
+
+.contact-card {
+  @apply m-8;
+  height: 95%;
+}
+
+.icon-socials {
+  @apply text-4xl text-[#dadfe2] transition-colors ease-in-out duration-150 hover:text-[#9eadb9];
+}

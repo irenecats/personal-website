@@ -29,15 +29,19 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  
-        font-[family-name:var(--font-geist-sans)] bg-[url('/hero-template.jpg')] bg-fixed `}
+        font-[family-name:var(--font-geist-sans)]`}
       >
+        <div
+          className="bg-[url('/hero-template.jpg')] bg-fixed  
+        absolute top-0 bottom-0 left-0 right-0 -z-10"
+        />
         <NavBar>
           <NavLink className="mr-auto " title="Home" href="/" />
           <NavLink title="About" href="/about" />
           <NavLink title="Projects" href="/projects" />
           <NavLink title="Contact" href="/contact" />
         </NavBar>
-        <main className="min-h-screen p-4 pt-8">{children}</main>
+        <main className="h-screen p-4 pt-8">{children}</main>
         <Footer />
       </body>
     </html>
