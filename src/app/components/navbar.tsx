@@ -18,15 +18,18 @@ export default function NavBar({ children }: NavBarProps) {
         {children.map((elem: ReactNode, index: number) => {
           const separator =
             index > 1 ? (
-              <Separator separatorType={SeparatorTypeEnum.SparkleRound} />
+              <Separator
+                key={index}
+                separatorType={SeparatorTypeEnum.SparkleRound}
+              />
             ) : (
               ""
             );
           return (
-            <>
+            <div key={index} className="contents">
               {separator}
               {elem}
-            </>
+            </div>
           );
         })}
       </nav>
