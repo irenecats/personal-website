@@ -7,7 +7,7 @@
   animation: wipe-text 1.5s ease-out both;
 }
 
-.wrapper:not(:hover) .project-bg {
+.wrapper:not(:hover) .project-bg-rev {
   animation: wipe-bg-rev 1s ease-in both;
 }
 
