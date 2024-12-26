@@ -4,11 +4,15 @@
 }
 
 .wrapper:hover .project-title {
-  animation: wipe-text 1.5s ease-out;
+  animation: wipe-text 1.5s ease-out both;
+}
+
+.wrapper:not(:hover) .project-bg {
+  animation: wipe-bg-rev 1s ease-in both;
 }
 
 .wrapper:hover .project-bg {
-  animation: wipe-bg 1s ease;
+  animation: wipe-bg 1s ease both;
 }
 
 @keyframes wipe-text {
@@ -37,5 +41,20 @@
   100% {
     width: 75%;
     opacity: 1;
+  }
+}
+
+@keyframes wipe-bg-rev {
+  0% {
+    width: 75%;
+    opacity: 1;
+  }
+  30% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
   }
 }
