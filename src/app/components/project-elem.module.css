@@ -1,0 +1,41 @@
+.project-title,
+.project-bg {
+  opacity: 0;
+}
+
+.wrapper:hover .project-title {
+  animation: wipe-text 1.5s ease-out;
+}
+
+.wrapper:hover .project-bg {
+  animation: wipe-bg 1s ease;
+}
+
+@keyframes wipe-text {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes wipe-bg {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  75% {
+    width: 75%;
+    opacity: 1;
+  }
+  100% {
+    width: 75%;
+    opacity: 1;
+  }
+}

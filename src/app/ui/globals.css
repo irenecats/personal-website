@@ -29,7 +29,6 @@
 }
 
 .contact-card {
-  @apply m-8;
   height: 95%;
 }
 
