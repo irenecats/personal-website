@@ -3,6 +3,14 @@
   opacity: 0;
 }
 
+.project-bg {
+  box-shadow: 2px 2px 4px rgba(8, 1, 49, 0.5);
+}
+
+.wrapper {
+  box-shadow: 2px 2px 4px rgba(8, 1, 49, 0.4);
+}
+
 .wrapper:hover .project-title {
   animation: wipe-text 1.5s ease-out both;
 }

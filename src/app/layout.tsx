@@ -4,6 +4,7 @@ import "./ui/globals.css";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import NavLink from "./components/nav-link";
+import FooterMinimal from "./components/footer-minimal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,7 @@ export default function RootLayout({
           <NavLink title="Contact" href="/contact" />
         </NavBar>
         <main className="h-screen p-4 pt-8">{children}</main>
-        <Footer />
+        <FooterMinimal />
       </body>
     </html>
   );

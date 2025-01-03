@@ -35,3 +35,28 @@
 .icon-socials {
   @apply text-4xl text-[#dadfe2] transition-colors ease-in-out duration-150 hover:text-[#9eadb9];
 }
+
+.icon-socials-small {
+  @apply text-3xl text-[#dadfe2] transition-colors ease-in-out duration-150 hover:text-[#9eadb9];
+}
+
+.pageTitle {
+  width: fit-content;
+}
+
+.pageTitle::after {
+  content: "";
+  height: 0.25em;
+  background-color: #dadfe2;
+  width: 120%;
+  display: block;
+  scale: 0 1;
+  transform-origin: bottom left;
+  animation: underline 1s ease forwards;
+}
+
+@keyframes underline {
+  100% {
+    scale: 1 1;
+  }
+}

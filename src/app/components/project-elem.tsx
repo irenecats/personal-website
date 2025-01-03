@@ -3,7 +3,12 @@ import Image from "next/image";
 import Styles from "./project-elem.module.css";
 import { useState } from "react";
 
-export default function ProjectElem() {
+interface ProjectProps {
+  className?: string;
+  delay: num;
+}
+
+export default function ProjectElem({ className, delay }: ProjectProps) {
   const [animationClass, setClass] = useState(false);
   const reverseAnimation = animationClass ? `${Styles["project-bg-rev"]}` : "";
 
@@ -23,7 +28,8 @@ export default function ProjectElem() {
     <div
       onMouseEnter={addHoverListener}
       onMouseLeave={removeHoverListener}
-      className={`${Styles.wrapper} max-w-[22%] relative h-fit border-8 border-[#243c71] rounded`}
+      className={`${className} ${Styles.wrapper} max-w-[18%] relative h-fit border-8 border-[#243c71] rounded`}
+      style={{ animationDelay: `${delay}ms` }}
     >
       <Image
         src="/blank-profile-picture.png"

@@ -6,8 +6,10 @@ import Email from "../../../public/email.svg";
 export default function Contact() {
   return (
     <div className="bg-blur contact-card m-8 p-[2.5rem]">
-      <h1 className="uppercase under text-[5rem] leading-[7rem]">Contact</h1>
-      <p className="text-4xl">
+      <h1 className="pageTitle uppercase under text-[4.5rem] leading-[7rem] mb-10 ml-4 mt-4">
+        Contact
+      </h1>
+      <p className="text-4xl ml-4">
         Want to know more?
         <br />
         Contact me on any of my socials accounts:{" "}
