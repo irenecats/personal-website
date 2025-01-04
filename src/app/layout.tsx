@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./ui/globals.css";
 import NavBar from "./components/navbar";
-import Footer from "./components/footer";
 import NavLink from "./components/nav-link";
 import FooterMinimal from "./components/footer-minimal";
+import Background from "./components/background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,13 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  
-        font-[family-name:var(--font-geist-sans)]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#071a45]`}
       >
-        <div
-          className="bg-[url('/hero-template.jpg')] bg-fixed  
-        absolute top-0 bottom-0 left-0 right-0 -z-10"
-        />
+        <Background />
         <NavBar>
           <NavLink className="mr-auto " title="Home" href="/" />
           <NavLink title="About" href="/about" />
