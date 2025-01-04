@@ -4,6 +4,7 @@ import "./ui/globals.css";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import NavLink from "./components/nav-link";
+import Background from "./components/background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  
-        font-[family-name:var(--font-geist-sans)] bg-[url('/hero-template.jpg')] bg-fixed `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#071a45]`}
       >
+        <Background />
         <NavBar>
           <NavLink className="mr-auto " title="Home" href="/" />
           <NavLink title="About" href="/about" />
