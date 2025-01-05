@@ -5,7 +5,7 @@ import { useState } from "react";
 
 interface ProjectProps {
   className?: string;
-  delay: num;
+  delay: number;
 }
 
 export default function ProjectElem({ className, delay }: ProjectProps) {
