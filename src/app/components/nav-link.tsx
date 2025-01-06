@@ -6,9 +6,9 @@ interface NavLinkProps {
   className?: string;
 }
 
-export default function NavLink({ title, href, className }: NavLinkProps) {
+export default function NavLink({ title, href }: NavLinkProps) {
   return (
-    <Link className={`navLink ${className}`} href={href ?? title}>
+    <Link className={"m-auto"} href={href ?? title}>
       {title}
     </Link>
   );
