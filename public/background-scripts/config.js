@@ -10,6 +10,7 @@ config = {
   SPLAT_RADIUS: 0.7,
   SPLAT_FORCE: 5000,
   BACK_COLOR: { r: 7, g: 26, b: 69 },
+  TRANSPARENT: true,
   COLOR_UPDATE_SPEED: 0.5,
   COLOR_IDX: 0,
   COLOR_PALETTE: [

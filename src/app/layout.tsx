@@ -8,12 +8,11 @@ import NavBar from "./components/navbar";
 import NavLink from "./components/nav-link";
 import FooterMinimal from "./components/footer-minimal";
 import Background from "./components/background";
-import { Roboto } from "next/font/google";
+import { Roboto, Noto_Serif } from "next/font/google";
 import "./ui/global.css";
 
-const roboto = Roboto({
+const roboto = Noto_Serif({
   subsets: ["latin"],
-  weight: "100",
   variable: "--font-roboto-mono",
 });
 
@@ -24,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} font-mono`}>
-      <body className={`antialiased bg-[#071a45] `}>
+      <body className={`antialiased bg-[#071a45] overflow-x-hidden`}>
         <Background />
         <NavBar>
           <NavLink title="Home" href="/" />
@@ -32,7 +31,9 @@ export default function RootLayout({
           <NavLink title="Projects" href="/projects" />
           <NavLink title="Contact" href="/contact" />
         </NavBar>
-        <main className={` h-screen p-4 pt-8 `}>{children}</main>
+        <main className={`px-4 relative z-10 pointer-events-none`}>
+          {children}
+        </main>
         <FooterMinimal />
       </body>
     </html>

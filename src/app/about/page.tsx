@@ -1,22 +1,32 @@
-import Image from "next/image";
 export default function About() {
   return (
-    <div className="bg-blur contact-card m-8 p-[2.5rem]">
+    <div className="pointer-events-none relative h-full flex flex-col justify-center content-around flex-wrap text-[#dadfe2] text-center gap-8 ">
       <h1 className="pageTitle uppercase under text-[4.5rem] leading-[7rem] mb-10 ml-4 mt-4">
         About
       </h1>
       <div className="flex row justify-between">
-        <div className="pl-8 w-[80em] ml-5 text-justify">
-          <p className="text-4xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            lobortis ante ut enim vehicula, nec hendrerit ex aliquam. Sed nec
-            varius elit. Integer hendrerit eleifend diam, id fermentum urna
-            lacinia ac. Aenean venenatis luctus tortor vel sollicitudin. Duis
-            vitae faucibus tellus, non tincidunt lectus. Phasellus convallis dui
-            in sagittis fermentum. Etiam in hendrerit leo. Mauris accumsan enim
-            nunc. Sed rhoncus quam vel nulla accumsan, ut aliquam odio pretium.
-            Morbi non lorem quis nibh convallis interdum at ut mauris. Cras
-            ullamcorper dolor est, vitae rutrum arcu dapibus vel.
+        <div className="pl-8 w-[80em] ml-5 text-justify text-4xl w-9/12">
+          <p>
+            Hi! I am Irene Clemente, a Spanish multimedia engineering graduate
+            with more than 3 years of work experience as a Software Engineer.
+            Recently moved to Shinjuku, I&apos;m looking for new opportunities
+            in Tokyo!
+          </p>
+          <p className="mt-4">
+            My passion lies in the impact of digital media on our daily lives
+            and the diverse creative ways in which people can interact with
+            them.
+          </p>
+          <p className="mt-4">
+            I have mainly worked with Java and Angular using Typescript,
+            building the UX of aeronautical applications. However, I am always
+            looking forward to acquiring new skills, currently looking forward
+            to expanding my Front End tech stack.
+          </p>
+          <p className="mt-4">
+            Aaaaaaaaaaside from programming, in my free time I enjoy playing
+            video games curled up with my cat, fiber arts and learning about
+            fashion history.
           </p>
           <button>Dowload CV</button>
         </div>

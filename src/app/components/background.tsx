@@ -3,9 +3,9 @@ import InteractiveBackground from "./interactive-bg";
 
 export default function Background() {
   return (
-    <div>
-      <DecorativeBackground />
+    <>
       <InteractiveBackground />
-    </div>
+      <DecorativeBackground />
+    </>
   );
 }
