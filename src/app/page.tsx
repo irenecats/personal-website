@@ -1,5 +1,6 @@
 "use client";
 import ArrowDown from "../../public/icons/arrow-down.svg";
+import DecorativeBackground from "./components/decorative-bg";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         >
           Multimedia Engineer
         </h2>
+        <DecorativeBackground />
       </section>
       <section className="min-h-screen flex flex-row justify-stretch text-[#dadfe2] px-64 pt-52">
         <div className="w-7/12">
@@ -56,9 +58,6 @@ export default function Home() {
           </div>
         </div>
         <div>Lo del cohete</div>
-      </section>
-      <section className="h-screen bg-red-700">
-        <h1 className="text-[6vw]">Layout</h1>
       </section>
     </>
   );
