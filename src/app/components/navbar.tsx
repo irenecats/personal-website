@@ -7,8 +7,8 @@ interface NavBarProps {
 
 export default function NavBar({ children }: NavBarProps) {
   return (
-    <header>
-      <nav className="flex justify-end gap-10 m-0 mt-6 px-5 absolute right-0 left-0 z-10 font-semibold text-[#dadfe2]">
+    <header className="relative w-full flex justify-center">
+      <nav className="flex justify-end gap-10 m-0 mt-6 px-5 font-semibold text-[#dadfe2] w-full max-w-[200rem]  ">
         {Children.map(children, (child: ReactNode, index: number) => {
           const useSeparator = index > 1;
           const elemStyle = index == 0 ? "mr-auto" : "";
