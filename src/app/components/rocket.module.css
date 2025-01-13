@@ -1,0 +1,54 @@
+.rocket {
+  fill: #dadfe2;
+}
+
+.circle {
+  fill: #dadfe2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pop 200ms linear forwards;
+}
+
+.textPath {
+  text-anchor: middle;
+  fill: #dadfe2;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.year {
+  font-size: 1.25rem;
+}
+
+.rocketPath {
+  stroke: #dadfe2;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: drawLineTop 1s linear forwards;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drawLineTop {
+  0% {
+    stroke-dashoffset: 700;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

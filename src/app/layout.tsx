@@ -8,10 +8,10 @@ import NavBar from "./components/navbar";
 import NavLink from "./components/nav-link";
 import FooterMinimal from "./components/footer-minimal";
 import Background from "./components/background";
-import { Roboto, Noto_Serif } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./ui/global.css";
 
-const roboto = Noto_Serif({
+const roboto = Inter({
   subsets: ["latin"],
   variable: "--font-roboto-mono",
 });
