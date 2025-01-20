@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
 .navLink {
   @apply uppercase tracking-wider  text-center;
   width: 8rem;
@@ -31,6 +36,7 @@
 .section {
   height: fit-content;
   min-height: 100vh;
+  scroll-snap-align: start;
 }
 
 #Hero-Thick {
