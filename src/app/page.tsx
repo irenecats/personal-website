@@ -3,6 +3,7 @@ import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
 import DecorativeBackground from "./components/decorative-bg";
 import ProjectGallery from "./components/project-gallery";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -67,8 +68,8 @@ export default function Home() {
       <section className="section px-52">
         <ProjectGallery />
       </section>
-      <section className="section"></section>
-      <section className="section"></section>
+      <div className="h-4"></div>
+      <Footer />
     </>
   );
 }

@@ -38,14 +38,15 @@
 
 .project {
   border-radius: 0.5em;
+  object-fit: cover;
   position: absolute;
   transform-origin: top left;
-  transition: opacity 500ms, transform 500ms, inset 500ms;
+  transition: opacity 200ms, transform 500ms, inset 500ms;
 }
 
 .project:has(~ .selectedProject) {
+  inset: -10px 0 0 -10px;
   opacity: 0;
-  transform: rotate(-45deg) scale(0.5);
 }
 
 .selectedProject {
