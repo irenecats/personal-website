@@ -34,9 +34,25 @@ html {
 }
 
 .section {
+  background-color: black;
   height: fit-content;
   min-height: 100vh;
   scroll-snap-align: start;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  h1 {
+    font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, calc(1vw + 1rem), 5rem);
+  }
 }
 
 #Hero-Thick {
@@ -85,43 +101,9 @@ html {
   }
 }
 
-/*
-.bg-blur {
-  @apply bg-[#243c71]/75 text-[#dadfe2] rounded-xl;
-
-  backdrop-filter: blur(10px);
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15% 13rem 0px 13rem;
 }
-
-.contact-card {
-  height: 95%;
-}
-
-.icon-socials {
-  @apply text-4xl text-[#dadfe2] transition-colors ease-in-out duration-150 hover:text-[#9eadb9];
-}
-
-.icon-socials-small {
-  @apply text-3xl text-[#dadfe2] transition-colors ease-in-out duration-150 hover:text-[#9eadb9];
-}
-
-.pageTitle {
-  width: fit-content;
-}
-
-.pageTitle::after {
-  content: "";
-  height: 0.25em;
-  background-color: #dadfe2;
-  width: 120%;
-  display: block;
-  scale: 0 1;
-  transform-origin: bottom left;
-  animation: underline 1s ease forwards;
-}
-
-@keyframes underline {
-  100% {
-    scale: 1 1;
-  }
-}
-*/

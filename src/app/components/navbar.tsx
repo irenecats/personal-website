@@ -7,7 +7,7 @@ interface NavBarProps {
 
 export default function NavBar({ children }: NavBarProps) {
   return (
-    <header className="relative w-full flex justify-center">
+    <div className="absolute w-full flex justify-center">
       <nav className="flex justify-end gap-10 m-0 mt-6 px-5 font-semibold text-[#dadfe2] w-full max-w-[200rem]  ">
         {Children.map(children, (child: ReactNode, index: number) => {
           const useSeparator = index > 1;
@@ -22,6 +22,6 @@ export default function NavBar({ children }: NavBarProps) {
           );
         })}
       </nav>
-    </header>
+    </div>
   );
 }
