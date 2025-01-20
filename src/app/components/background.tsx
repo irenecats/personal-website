@@ -1,18 +1,9 @@
-"use client";
-import Script from "next/script";
+import InteractiveBackground from "./interactive-bg";
 
 export default function Background() {
   return (
     <>
-      <canvas className="absolute w-full h-full" />
-      <Script src="./background/config.js" />
-      <Script src="./background/shaders.js" />
-      <Script
-        src="./background/script.js"
-        crossOrigin="anonymous"
-        type="module"
-        strategy="afterInteractive"
-      />
+      <InteractiveBackground />
     </>
   );
 }

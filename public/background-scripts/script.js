@@ -764,7 +764,10 @@ function render(target) {
   gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
   gl.enable(gl.BLEND);
 
-  drawColor(target, normalizeColor(config.BACK_COLOR));
+  if (!config.TRANSPARENT) {
+    drawColor(target, normalizeColor(config.BACK_COLOR));
+  }
+
   drawDisplay(target);
 }
 

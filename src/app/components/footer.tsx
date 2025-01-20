@@ -1,5 +1,5 @@
-import Github from "../../../public/github.svg";
-import Linkedin from "../../../public/linkedin.svg";
+import Github from "../../../public/icons/github.svg";
+import Linkedin from "../../../public/icons/linkedin.svg";
 
 export default function Footer() {
   /* TODO:
@@ -8,20 +8,17 @@ export default function Footer() {
    * Hover animations
    */
 
-  const dateYear = new Date().getFullYear();
-
-  const socialStyles = "text-4xl text-[#dadfe2]]";
-
   return (
-    <footer className="bg-[#243c71]/75 text-[#dadfe2] py-5 bottom-0 text-center">
+    <footer className="text-[8375d] py-5 bottom-0 text-center">
       <div className="flex flex-row space-x-5 pb-2 content-center justify-center">
         <a
           href="https://www.linkedin.com/in/irene-clemente-aracil"
           target="_blank"
           rel="noopener noreferrer"
+          className="pointer-events-auto"
         >
           <Linkedin
-            className={socialStyles}
+            className="icon-socials"
             alt="LinkedIn icon that redirects to my personal page"
           />
         </a>
@@ -29,16 +26,14 @@ export default function Footer() {
           href="https://github.com/irenecats"
           target="_blank"
           rel="noopener noreferrer"
+          className="pointer-events-auto"
         >
           <Github
-            className={socialStyles}
+            className="icon-socials"
             alt="Github icon that redirects to my personal profile"
           />
         </a>
       </div>
-      <small>
-        &#9400; Copyright {dateYear}, Irene Clemente Aracil. All rights reserved
-      </small>
     </footer>
   );
 }

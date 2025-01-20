@@ -1,32 +1,24 @@
-import { ReactNode } from "react";
+import { Children, ReactNode } from "react";
 import Separator, { SeparatorTypeEnum } from "./nav-separator";
 
 interface NavBarProps {
-  children: ReactNode[];
+  children?: ReactNode;
 }
 
 export default function NavBar({ children }: NavBarProps) {
   return (
-    <header>
-      <nav
-        className="
-          flex justify-end gap-10 
-          m-0 mt-2 px-5  absolute right-0 left-0 z-10
-          font-semibold text-[#dadfe2]
-        "
-      >
-        {children.map((elem: ReactNode, index: number) => {
-          const separator =
-            index > 1 ? (
-              <Separator separatorType={SeparatorTypeEnum.SparkleRound} />
-            ) : (
-              ""
-            );
-          return (
+    <header className="relative w-full flex justify-center">
+      <nav className="flex justify-end gap-10 m-0 mt-6 px-5 font-semibold text-[#dadfe2] w-full max-w-[200rem]  ">
+        {Children.map(children, (child: ReactNode, index: number) => {
+          const useSeparator = index > 1;
+          const elemStyle = index == 0 ? "mr-auto" : "";
+          return useSeparator ? (
             <>
-              {separator}
-              {elem}
+              <Separator separatorType={SeparatorTypeEnum.SparkleCustom} />
+              <div className="navLink">{child}</div>
             </>
+          ) : (
+            <div className={`${elemStyle} navLink`}>{child}</div>
           );
         })}
       </nav>

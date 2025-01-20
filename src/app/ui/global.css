@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navLink {
+  @apply uppercase tracking-wider  text-center;
+  width: 8rem;
+}
+
+.navLink a {
+  display: block;
+  width: 100%;
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+  transition: transform 400ms ease-out;
+}
+
+.navLink::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: #dadfe2;
+
+  transform: scaleX(0);
+}
+
+.section {
+  height: fit-content;
+  min-height: 100vh;
+}
+
+#Hero-Thick {
+  stroke-dasharray: 4405;
+  stroke-dashoffset: 4405;
+  animation: drawLine 2s ease-in-out forwards;
+}
+
+#Hero-Thin {
+  stroke-dasharray: 4405;
+  stroke-dashoffset: 4405;
+
+  animation: drawLine 2s ease-in-out forwards;
+  animation-delay: 250ms;
+}
+
+#Thin-vector-top {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 490;
+  animation: drawLineTop 750ms ease-in-out forwards;
+  animation-delay: 500ms;
+}
+
+#Thick-vector-top {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawLineTop 750ms ease-in-out forwards;
+  animation-delay: 250ms;
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 4405;
+  }
+  100% {
+    stroke-dashoffset: 8800;
+  }
+}
+
+@keyframes drawLineTop {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+  }
+}
+
+/*
+.bg-blur {
+  @apply bg-[#243c71]/75 text-[#dadfe2] rounded-xl;
+
+  backdrop-filter: blur(10px);
+}
+
+.contact-card {
+  height: 95%;
+}
+
+.icon-socials {
+  @apply text-4xl text-[#dadfe2] transition-colors ease-in-out duration-150 hover:text-[#9eadb9];
+}
+
+.icon-socials-small {
+  @apply text-3xl text-[#dadfe2] transition-colors ease-in-out duration-150 hover:text-[#9eadb9];
+}
+
+.pageTitle {
+  width: fit-content;
+}
+
+.pageTitle::after {
+  content: "";
+  height: 0.25em;
+  background-color: #dadfe2;
+  width: 120%;
+  display: block;
+  scale: 0 1;
+  transform-origin: bottom left;
+  animation: underline 1s ease forwards;
+}
+
+@keyframes underline {
+  100% {
+    scale: 1 1;
+  }
+}
+*/
