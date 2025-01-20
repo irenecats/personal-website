@@ -12,8 +12,8 @@ export default function DecorativeBackground() {
     //const pathLength = bottomThick.current?.getTotalLength();
     //console.log(pathLength);
     if (topThick.current) {
-      console.log(topThick.current?.getTotalLength());
-      console.log(topThin.current?.getTotalLength());
+      //console.log(topThick.current?.getTotalLength());
+      //console.log(topThin.current?.getTotalLength());
     }
   }, [topThick, topThin]);
 

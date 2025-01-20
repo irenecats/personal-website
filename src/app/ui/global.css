@@ -28,6 +28,11 @@
   transform: scaleX(0);
 }
 
+.section {
+  height: fit-content;
+  min-height: 100vh;
+}
+
 #Hero-Thick {
   stroke-dasharray: 4405;
   stroke-dashoffset: 4405;

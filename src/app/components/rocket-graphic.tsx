@@ -6,7 +6,7 @@ export default function RocketGraphic() {
       viewBox="0 0 800 786"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-auto h-[85%] relative -top-14 -left-4"
+      className="w-auto h-auto relative -top-14 -left-4"
     >
       <path
         className={styles.rocket}

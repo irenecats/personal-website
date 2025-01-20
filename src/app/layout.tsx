@@ -23,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} font-mono`}>
-      <body className={`antialiased bg-[#071a45] overflow-x-hidden`}>
+      <body
+        className={`antialiased bg-[#071a45] text-[#dadfe2] overflow-x-hidden`}
+      >
         <Background />
         <NavBar>
           <NavLink title="Home" href="/" />

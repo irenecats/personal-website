@@ -49,14 +49,18 @@ const sparkleMapAux = new Map<SeparatorTypeEnum, ISeparatorType>([
 
 export interface SeparatorProps {
   separatorType: SeparatorTypeEnum;
+  classStyle?: string;
 }
 
-export default function Separator({ separatorType }: SeparatorProps) {
+export default function Separator({
+  separatorType,
+  classStyle,
+}: SeparatorProps) {
   const separator = sparkleMapAux.get(separatorType);
   return (
     <>
       {separator ? (
-        <div className={separator.classN}>{separator.func()}</div>
+        <div className={classStyle || separator.classN}>{separator.func()}</div>
       ) : (
         ""
       )}

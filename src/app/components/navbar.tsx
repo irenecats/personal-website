@@ -2,7 +2,7 @@ import { Children, ReactNode } from "react";
 import Separator, { SeparatorTypeEnum } from "./nav-separator";
 
 interface NavBarProps {
-  children: ReactNode[];
+  children?: ReactNode;
 }
 
 export default function NavBar({ children }: NavBarProps) {

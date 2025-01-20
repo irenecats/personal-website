@@ -1,12 +1,13 @@
 "use client";
 import ArrowDown from "../../public/icons/arrow-down.svg";
-import RocketGraphic from "./components/rocketGraphic";
+import RocketGraphic from "./components/rocket-graphic";
 import DecorativeBackground from "./components/decorative-bg";
+import ProjectGallery from "./components/project-gallery";
 
 export default function Home() {
   return (
     <>
-      <section className="relative h-screen flex flex-col justify-center content-around flex-wrap text-[#dadfe2] text-center gap-8">
+      <section className="section relative flex flex-col justify-center text-center gap-8">
         <h1
           className=""
           style={{
@@ -24,7 +25,7 @@ export default function Home() {
         </h2>
         <DecorativeBackground />
       </section>
-      <section className="min-h-screen text-[#dadfe2] px-64 pt-[15%] flex flex-row justify-">
+      <section className="section px-52 pt-[15%] flex flex-row justify-between">
         <div className="w-[60%]">
           <h1 className="text-6xl font-semibold">About</h1>
           <div className="text-[1.40rem] leading-[160%] text-justify pl-14">
@@ -58,10 +59,16 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="w-4/12">
+        <div className="w-[35%]">
           <RocketGraphic />
         </div>
       </section>
+      <div className="bg-[#dadfe2] h-4"></div>
+      <section className="section px-52">
+        <ProjectGallery />
+      </section>
+      <section className="section"></section>
+      <section className="section"></section>
     </>
   );
 }
