@@ -1,4 +1,4 @@
-import styles from "./rocket.module.css";
+import styles from "./rocket-graphic.module.css";
 
 export default function RocketGraphic() {
   return (

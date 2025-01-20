@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
-import { Project, projectList } from "./project-Item";
+import { Project, projectList } from "./static-info/projectList";
 import { createRef, useEffect, useState } from "react";
 import Separator, { SeparatorTypeEnum } from "./nav-separator";
 import style from "./project-gallery.module.css";
-import { Stick } from "next/font/google";
-import React, { UIEvent } from "react";
 
 export default function ProjectGallery() {
   const [selectedItem, setSelected] = useState(0);
