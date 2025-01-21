@@ -7,42 +7,63 @@ import style from "./project-gallery.module.css";
 
 export default function ProjectGallery() {
   const [selectedItem, setSelected] = useState(0);
-  const [scroll, setScroll] = useState(0);
-  const [scrollingPanel, setScrollPanel] = useState(false);
-
+  const [parentToTop, setParentToTop] = useState(0);
+  const [height, setHeight] = useState(0);
   const parentRef = createRef<HTMLDivElement>();
-  const stickyRef = createRef<HTMLDivElement>();
 
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
-
+  //Gets parent height in pixels - should change one time
   useEffect(() => {
+    const height = parentRef.current?.clientHeight || window.innerHeight;
+    setHeight(height);
+  }, [parentRef]);
+
+  //Gets parent Y position in relation to the window - should change on scroll change
+  useEffect(() => {
+    const handleScroll = () => {
+      const parentYPos = parentRef.current?.getBoundingClientRect().top || 1;
+      setParentToTop(parentYPos);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    const parentYPos = parentRef.current?.getBoundingClientRect().top || 1;
-    const parentHeight = parentRef.current?.clientHeight || window.innerHeight;
-    let selectedProyect;
-    if (parentYPos > 0) {
-      selectedProyect = 0;
-    } else if (parentYPos <= -parentHeight) {
-      selectedProyect = projectList.length - 1;
-    } else {
-      const sections = parentHeight / (projectList.length + 1);
-      selectedProyect = Math.floor(Math.abs(parentYPos / sections));
-      selectedProyect = Math.min(selectedProyect, projectList.length - 1);
-    }
-    setSelected(selectedProyect);
   }, [parentRef]);
+
+  //Detects wich project element needs to be selected - should change on scroll change
+  useEffect(() => {
+    if (parentRef.current != null) {
+      let selectedProyect;
+
+      if (parentToTop > 0) {
+        selectedProyect = 0;
+      } else if (parentToTop <= -height) {
+        selectedProyect = projectList.length - 1;
+      } else {
+        const sections = height / (projectList.length + 1);
+        selectedProyect = Math.floor(Math.abs(parentToTop / sections));
+        selectedProyect = Math.min(selectedProyect, projectList.length - 1);
+      }
+      setSelected(selectedProyect);
+    }
+  }, [parentToTop, parentRef, height]);
+
+  function handleClick(event: React.MouseEvent, index: number) {
+    if (parentRef.current) {
+      window.scrollTo({
+        left: 0,
+        top:
+          (height / (projectList.length + 1)) * index +
+          parentRef.current?.offsetTop +
+          1,
+        behavior: "instant",
+      });
+    }
+  }
 
   return (
     <div ref={parentRef} className="min-h-[inherit] h-[400vh]">
-      <div ref={stickyRef} className="sticky top-0 pt-10">
+      <div className="sticky top-0 pt-10">
         <h1 className="text-6xl font-semibold">Projects</h1>
         <div className=" flex justify-between mt-16">
           <div className="w-[40%]">
@@ -56,6 +77,9 @@ export default function ProjectGallery() {
                         ? `${style.titleRow} ${style.selected}`
                         : style.titleRow
                     }
+                    onClick={(e) => {
+                      handleClick(e, index);
+                    }}
                   >
                     <Separator
                       separatorType={SeparatorTypeEnum.SparkleCustom}
