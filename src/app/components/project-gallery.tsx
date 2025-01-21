@@ -7,7 +7,7 @@ import style from "./project-gallery.module.css";
 
 export default function ProjectGallery() {
   const [selectedItem, setSelected] = useState(0);
-  const [scroll, setScroll] = useState(0);
+  const [parentToTop, setParentToTop] = useState(0);
   const [height, setHeight] = useState(0);
   const parentRef = createRef<HTMLDivElement>();
 
@@ -21,7 +21,7 @@ export default function ProjectGallery() {
   useEffect(() => {
     const handleScroll = () => {
       const parentYPos = parentRef.current?.getBoundingClientRect().top || 1;
-      setScroll(parentYPos);
+      setParentToTop(parentYPos);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -35,18 +35,18 @@ export default function ProjectGallery() {
     if (parentRef.current != null) {
       let selectedProyect;
 
-      if (scroll > 0) {
+      if (parentToTop > 0) {
         selectedProyect = 0;
-      } else if (scroll <= -height) {
+      } else if (parentToTop <= -height) {
         selectedProyect = projectList.length - 1;
       } else {
         const sections = height / (projectList.length + 1);
-        selectedProyect = Math.floor(Math.abs(scroll / sections));
+        selectedProyect = Math.floor(Math.abs(parentToTop / sections));
         selectedProyect = Math.min(selectedProyect, projectList.length - 1);
       }
       setSelected(selectedProyect);
     }
-  }, [scroll, parentRef, height]);
+  }, [parentToTop, parentRef, height]);
 
   function handleClick(event: React.MouseEvent, index: number) {
     if (parentRef.current) {
