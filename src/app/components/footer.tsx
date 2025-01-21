@@ -1,7 +1,11 @@
 import Github from "../../../public/icons/github.svg";
 import Linkedin from "../../../public/icons/linkedin.svg";
 
-export default function Footer() {
+interface Props {
+  idElement?: string;
+}
+
+export default function Footer({ idElement }: Props) {
   /* TODO:
    * Minimal nav bar (?)
    * Create button icon element, use icons without borders and add style with css
@@ -9,7 +13,10 @@ export default function Footer() {
    */
 
   return (
-    <footer className="text-[8375d] py-5 bottom-0 text-center">
+    <footer
+      id={idElement}
+      className="snap-end text-[8375d] py-5 bottom-0 text-center"
+    >
       <div className="flex flex-row space-x-5 pb-2 content-center justify-center">
         <a
           href="https://www.linkedin.com/in/irene-clemente-aracil"

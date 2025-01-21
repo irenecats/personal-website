@@ -2,7 +2,7 @@ import Link from "next/link";
 
 interface NavLinkProps {
   title: string;
-  href: string;
+  href?: string;
   className?: string;
 }
 

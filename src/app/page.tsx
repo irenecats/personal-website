@@ -4,29 +4,17 @@ import RocketGraphic from "./components/rocket-graphic";
 import DecorativeBackground from "./components/decorative-bg";
 import ProjectGallery from "./components/project-gallery";
 import Footer from "./components/footer";
+import PageSection from "./components/page-section";
 
 export default function Home() {
   return (
     <>
-      <section className="section relative flex flex-col justify-center text-center gap-8">
-        <h1
-          className=""
-          style={{
-            fontSize: "clamp(2.5rem , calc(2.5vw + 1rem), 10rem)",
-          }}
-        >
-          Irene Clemente Aracil
-        </h1>
-        <h2
-          style={{
-            fontSize: "clamp(1.5rem , calc(1vw + 1rem), 5rem)",
-          }}
-        >
-          Multimedia Engineer
-        </h2>
+      <PageSection idElement="hero">
+        <h1>Irene Clemente Aracil</h1>
+        <h2>Multimedia Engineer</h2>
         <DecorativeBackground />
-      </section>
-      <section className="section px-52 pt-[15%] flex flex-row justify-between">
+      </PageSection>
+      <PageSection idElement="about">
         <div className="w-[60%]">
           <h1 className="text-6xl font-semibold">About</h1>
           <div className="text-[1.40rem] leading-[160%] text-justify pl-14">
@@ -63,13 +51,12 @@ export default function Home() {
         <div className="w-[35%]">
           <RocketGraphic />
         </div>
-      </section>
+      </PageSection>
       <div className="bg-[#dadfe2] h-4"></div>
-      <section className="section px-52">
+      <PageSection idElement="projects" classes="px-52">
         <ProjectGallery />
-      </section>
-      <div className="h-4"></div>
-      <Footer />
+      </PageSection>
+      <Footer idElement="contact" />
     </>
   );
 }
