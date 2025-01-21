@@ -9,12 +9,12 @@ import PageSection from "./components/page-section";
 export default function Home() {
   return (
     <>
-      <PageSection classes="hero">
+      <PageSection idElement="hero">
         <h1>Irene Clemente Aracil</h1>
         <h2>Multimedia Engineer</h2>
         <DecorativeBackground />
       </PageSection>
-      <PageSection classes="about">
+      <PageSection idElement="about">
         <div className="w-[60%]">
           <h1 className="text-6xl font-semibold">About</h1>
           <div className="text-[1.40rem] leading-[160%] text-justify pl-14">
@@ -53,10 +53,10 @@ export default function Home() {
         </div>
       </PageSection>
       <div className="bg-[#dadfe2] h-4"></div>
-      <PageSection classes="px-52">
+      <PageSection idElement="projects" classes="px-52">
         <ProjectGallery />
       </PageSection>
-      <Footer />
+      <Footer idElement="contact" />
     </>
   );
 }

@@ -28,10 +28,9 @@ export default function RootLayout({
       >
         <Background />
         <NavBar>
-          <NavLink title="Home" href="/" />
-          <NavLink title="About" href="/about" />
-          <NavLink title="Projects" href="/projects" />
-          <NavLink title="Contact" href="/contact" />
+          <NavLink title="about" href="#about" />
+          <NavLink title="projects" href="#projects" />
+          <NavLink title="contact" href="#contact" />
         </NavBar>
         <main className={`px-4 relative z-10 pointer-events-none`}>
           {children}
