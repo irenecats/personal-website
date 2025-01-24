@@ -7,6 +7,9 @@ html {
   scroll-snap-type: y proximity;
 }
 
+body {
+}
+/*
 .navLink {
   @apply uppercase tracking-wider  text-center;
   width: 8rem;
@@ -32,13 +35,14 @@ html {
 
   transform: scaleX(0);
 }
-
+*/
 .section {
-  height: fit-content;
+  margin: 1rem;
   min-height: 100vh;
+  height: fit-content;
   scroll-snap-align: start;
 }
-
+/*
 #hero {
   display: flex;
   flex-direction: column;
@@ -99,10 +103,66 @@ html {
     stroke-dashoffset: 1000;
   }
 }
+*/
 
+#hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  h1 {
+    font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, calc(1vw + 1rem), 5rem);
+  }
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h1 {
+    font-weight: 600;
+    font-size: 3.75rem;
+  }
+
+  div {
+    font-size: 1.2rem;
+    line-height: 150%;
+    text-align: justify;
+    margin: auto;
+  }
+
+  > svg {
+    width: 100vw;
+  }
+
+  p {
+    margin-top: 2.5rem;
+  }
+}
+
+#projects {
+  h1 {
+    font-weight: 600;
+    font-size: 3.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: -1.5rem;
+  }
+}
+
+/*
 #about {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 15% 13rem 0px 13rem;
 }
+
+@media screen (max-width: 768px) {
+}
+*/
