@@ -1,12 +1,16 @@
+.svgRocketWrap {
+  width: clamp(5rem, calc(80vw + 1rem), 50rem);
+}
+
 .rocket {
   fill: #dadfe2;
 }
 
 .circle {
   fill: #dadfe2;
+  opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
-  animation: pop 200ms linear forwards;
 }
 
 .textPath {
@@ -24,7 +28,16 @@
   stroke: #dadfe2;
   stroke-dasharray: 700;
   stroke-dashoffset: 700;
-  animation: drawLineTop 1s linear forwards;
+}
+
+.rocketAnimation {
+  .rocketPath {
+    animation: drawLineTop 1s linear forwards;
+  }
+
+  .circle {
+    animation: pop 200ms linear forwards;
+  }
 }
 
 @keyframes pop {
