@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 import NavBar from "./components/navbar";
 import NavLink from "./components/nav-link";
 import FooterMinimal from "./components/footer-minimal";
-import Background from "./components/background";
 import { Inter } from "next/font/google";
 import "./ui/global.css";
+import InteractiveBackground from "./components/interactive-bg";
 
 const roboto = Inter({
   subsets: ["latin"],
@@ -26,15 +26,15 @@ export default function RootLayout({
       <body
         className={`antialiased bg-[#071a45] text-[#dadfe2] overflow-x-hidden`}
       >
-        <Background />
+        <InteractiveBackground />
         <NavBar>
           <NavLink title="about" href="#about" />
           <NavLink title="projects" href="#projects" />
           <NavLink title="contact" href="#contact" />
         </NavBar>
-        <main className={`px-4 relative z-10 pointer-events-none`}>
-          {children}
-        </main>
+
+        <main className={`px-4 relative pointer-events-none`}>{children}</main>
+
         <FooterMinimal />
       </body>
     </html>

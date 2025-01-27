@@ -5,6 +5,8 @@ import DecorativeBackground from "./components/decorative-bg";
 import ProjectGallery from "./components/project-gallery";
 import Footer from "./components/footer";
 import PageSection from "./components/page-section";
+import ElementInView from "./components/ElementInView";
+import InteractiveBackground from "./components/interactive-bg";
 
 export default function Home() {
   return (
@@ -12,29 +14,29 @@ export default function Home() {
       <PageSection idElement="hero">
         <h1>Irene Clemente Aracil</h1>
         <h2>Multimedia Engineer</h2>
-        <DecorativeBackground />
+        {/*<DecorativeBackground />*/}
       </PageSection>
       <PageSection idElement="about">
-        <div className="w-[60%]">
-          <h1 className="text-6xl font-semibold">About</h1>
-          <div className="text-[1.40rem] leading-[160%] text-justify pl-14">
-            <p className="mt-16">
+        <div>
+          <h1>About</h1>
+          <div>
+            <p>
               Hi! I am Irene, a Spanish multimedia engineering graduate with
               more than 3 years of work experience as a Software Engineer.
               Recently moved to Shinjuku, I’m looking for new opportunitiesin
               Tokyo!
             </p>
-            <p className="mt-10">
+            <p>
               My passion lies in the impact of digital media on our daily lives
               and the diverse creative ways in which people can interact with
               them.
             </p>
-            <p className="mt-10">
+            <p>
               Aside from programming, in my free time I enjoy playing video
               games curled up with my cat, fiber arts and learning about fashion
               history.
             </p>
-            <p className="mt-10">
+            <p>
               I have mainly worked with Java and Angular using Typescript,
               building the UX of aeronautical applications. However, I am always
               looking forward to acquiring new skills, currently looking forward
@@ -42,20 +44,17 @@ export default function Home() {
             </p>
             <a
               href="IreneClemente-CV.pdf"
-              className="pointer-events-auto flex flex-row items-center w-fit bg-[#dadfe2] py-0 pl-3  mt-10 rounded-xl text-[#071a45] font-extrabold cursor-pointer"
+              className="flex flex-row items-center w-fit bg-[#dadfe2] mt-10 rounded-xl text-[#071a45] font-extrabold cursor-pointer"
             >
               Download CV <ArrowDown className="size-10 fill-[#071a45]" />
             </a>
           </div>
         </div>
-        <div className="w-[35%]">
-          <RocketGraphic />
-        </div>
+        <RocketGraphic />
       </PageSection>
       <div className="bg-[#dadfe2] h-4"></div>
-      <PageSection idElement="projects" classes="px-52">
-        <ProjectGallery />
-      </PageSection>
+
+      {/*<PageSection idElement="projects"><ProjectGallery /></PageSection>*/}
       <Footer idElement="contact" />
     </>
   );
