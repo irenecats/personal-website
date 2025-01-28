@@ -3,9 +3,14 @@ import { createRef, ReactNode, useEffect } from "react";
 interface Props {
   children: ReactNode;
   animateClass: string;
+  parentClass?: string;
 }
 
-export default function ElementInView({ children, animateClass }: Props) {
+export default function ElementInView({
+  children,
+  animateClass,
+  parentClass,
+}: Props) {
   const wrapperRef = createRef<HTMLDivElement>();
   useEffect(() => {
     {
@@ -31,5 +36,9 @@ export default function ElementInView({ children, animateClass }: Props) {
     }
   }, [wrapperRef, animateClass]);
 
-  return <div ref={wrapperRef}>{children}</div>;
+  return (
+    <div ref={wrapperRef} className={`w-fit h-fit ${parentClass}`}>
+      {children}
+    </div>
+  );
 }

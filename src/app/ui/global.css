@@ -7,41 +7,17 @@ html {
   scroll-snap-type: y proximity;
 }
 
-body {
-}
-/*
-.navLink {
-  @apply uppercase tracking-wider  text-center;
-  width: 8rem;
-}
-
-.navLink a {
-  display: block;
-  width: 100%;
-}
-
-.navLink:hover::after {
-  transform: scaleX(1);
-  transition: transform 400ms ease-out;
-}
-
-.navLink::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  border-radius: 10px;
-  background-color: #dadfe2;
-
-  transform: scaleX(0);
-}
-*/
 .section {
   margin: 1rem;
-  min-height: 100vh;
   height: fit-content;
   scroll-snap-align: start;
 }
+
+h1 {
+  font-weight: 600;
+  font-size: 3.75rem;
+}
+
 /*
 #hero {
   display: flex;
@@ -107,12 +83,14 @@ body {
 
 #hero {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
   position: relative;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100vh;
   text-align: center;
   h1 {
+    font-weight: normal;
     font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
   }
   h2 {
@@ -121,48 +99,33 @@ body {
 }
 
 #about {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-items: center;
+
   gap: 2rem;
 
-  h1 {
-    font-weight: 600;
-    font-size: 3.75rem;
-  }
-
-  div {
+  div div {
     font-size: 1.2rem;
     line-height: 150%;
-    text-align: justify;
-    margin: auto;
-  }
-
-  > svg {
-    width: 100vw;
   }
 
   p {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
+    text-wrap: pretty;
+  }
+  p:first-of-type {
+    margin-top: 0.25rem;
+  }
+
+  a {
+    margin-top: 1rem;
+    padding: 0 0 0 0.75rem;
+    pointer-events: auto;
   }
 }
 
-#projects {
-  h1 {
-    font-weight: 600;
-    font-size: 3.75rem;
-    margin-top: 1.5rem;
-    margin-bottom: -1.5rem;
+@media screen and (width > 1050px) {
+  #about {
+    grid-template-columns: 1fr 1fr;
   }
 }
-
-/*
-#about {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 15% 13rem 0px 13rem;
-}
-
-@media screen (max-width: 768px) {
-}
-*/
