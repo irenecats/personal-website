@@ -4,7 +4,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
 }
 
 .section {
@@ -18,22 +17,13 @@ h1 {
   font-size: 3.75rem;
 }
 
-/*
-#hero {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  h1 {
-    font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
-  }
-  h2 {
-    font-size: clamp(1.5rem, calc(1vw + 1rem), 5rem);
-  }
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
+/*
 #Hero-Thick {
   stroke-dasharray: 4405;
   stroke-dashoffset: 4405;
@@ -82,16 +72,13 @@ h1 {
 */
 
 #hero {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
-  min-height: 100vh;
+  align-content: center;
   text-align: center;
+  min-height: 100vh;
   h1 {
     font-weight: normal;
     font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
+    margin-bottom: 1rem;
   }
   h2 {
     font-size: clamp(1.5rem, calc(1vw + 1rem), 5rem);
@@ -123,9 +110,15 @@ h1 {
     pointer-events: auto;
   }
 }
-
+main {
+  margin-bottom: 3rem;
+}
 @media screen and (width > 1050px) {
   #about {
     grid-template-columns: 1fr 1fr;
+  }
+
+  main {
+    margin-bottom: 0;
   }
 }
