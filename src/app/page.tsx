@@ -2,11 +2,10 @@
 import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
 import DecorativeBackground from "./components/decorative-bg";
-import ProjectGallery from "./components/project-gallery";
 import Footer from "./components/footer";
 import PageSection from "./components/page-section";
 import ElementInView from "./components/ElementInView";
-import InteractiveBackground from "./components/interactive-bg";
+import ScrollableGallery from "./components/scrollable-gallery";
 
 export default function Home() {
   return (
@@ -53,8 +52,9 @@ export default function Home() {
         <RocketGraphic />
       </PageSection>
       <div className="bg-[#dadfe2] h-4"></div>
-
-      {/*<PageSection idElement="projects"><ProjectGallery /></PageSection>*/}
+      <PageSection idElement="projects">
+        <ScrollableGallery />
+      </PageSection>
       <Footer idElement="contact" />
     </>
   );
