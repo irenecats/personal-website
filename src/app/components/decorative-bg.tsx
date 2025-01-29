@@ -1,12 +1,12 @@
 "use client";
-import { createRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 export default function DecorativeBackground() {
-  const svgRef = createRef<SVGSVGElement>();
-  const bottomThick = createRef<SVGGeometryElement>();
-  const bottomThin = createRef<SVGGeometryElement>();
-  const topThick = createRef<SVGGeometryElement>();
-  const topThin = createRef<SVGGeometryElement>();
+  const svgRef = useRef<SVGSVGElement>(null);
+  const bottomThick = useRef<SVGGeometryElement>(null);
+  const bottomThin = useRef<SVGGeometryElement>(null);
+  const topThick = useRef<SVGGeometryElement>(null);
+  const topThin = useRef<SVGGeometryElement>(null);
 
   useEffect(() => {
     //const pathLength = bottomThick.current?.getTotalLength();

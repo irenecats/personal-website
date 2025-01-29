@@ -1,4 +1,4 @@
-import { createRef, ReactNode, useEffect } from "react";
+import { useRef, ReactNode, useEffect } from "react";
 
 interface Props {
   children: ReactNode;
@@ -11,7 +11,7 @@ export default function ElementInView({
   animateClass,
   parentClass,
 }: Props) {
-  const wrapperRef = createRef<HTMLDivElement>();
+  const wrapperRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     {
       const currentRef = wrapperRef.current;
