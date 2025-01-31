@@ -15,7 +15,7 @@ export default function ScrollableGallery() {
         window.scrollTo({
           left: 0,
           top:
-            sectionHeight.current * (index + 1) + parentRef.current?.offsetTop,
+            sectionHeight.current * index + parentRef.current?.offsetTop + 17,
           behavior: "instant",
         });
       }

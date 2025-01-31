@@ -31,9 +31,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
               <li
                 key={index}
                 className={
-                  index == selectedItem
-                    ? `${style.title} ${style.selected} highlight`
-                    : style.title
+                  index == selectedItem ? `${style.selected} highlight` : ""
                 }
                 onClick={() => {
                   handleClick(index);
@@ -48,37 +46,30 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
             );
           })}
         </ul>
-        <div>
-          <Image
-            src="/projects/project0.jpg"
-            className={`${style.project} ${style.selectedProject}`}
-            style={{
-              zIndex: 10,
-            }}
-            width="800"
-            height="450"
-            alt="test img"
-          />
-
-          {/*projectList.map((elem: Project, index: number) => {
-              return (
+        <div className="relative">
+          {projectList.map((elem: Project, index: number) => {
+            return (
+              <div
+                key={index}
+                className={
+                  index == selectedItem
+                    ? `${style.project} ${style.selectedProject}`
+                    : `${style.project}`
+                }
+                style={{
+                  zIndex: 10 - index,
+                }}
+              >
                 <Image
-                  key={index}
                   src={elem.imageRef}
-                  className={
-                    index == selectedItem
-                      ? `${style.project} ${style.selectedProject}`
-                      : `${style.project}`
-                  }
-                  style={{
-                    zIndex: 10 - index,
-                  }}
-                  width="1280"
-                  height="1280"
+                  width="800"
+                  height="450"
                   alt="test img"
                 />
-              );
-            })*/}
+                <div />
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className={style.description} ref={descriptionRef}>

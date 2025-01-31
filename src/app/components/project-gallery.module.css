@@ -3,21 +3,27 @@
   position: sticky;
   top: 0;
   flex-direction: column;
-  max-height: calc(100dvh - 4.5rem);
   gap: 0.75rem;
+  max-height: calc(100svh - 4.5rem);
 }
 
-.description {
-  overflow-y: scroll;
+.stickyContainer > div:last-child {
+  overflow-y: auto;
   pointer-events: all;
 }
 
-.title {
+.sectionBody {
   display: grid;
-  grid-template-columns: 0.2fr 1fr;
+  gap: 0.75rem;
+}
+
+.sectionBody li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
   gap: 5px;
   cursor: pointer;
   margin: 0.5rem;
+  padding-inline: 0.5rem;
   pointer-events: auto;
   font-size: 0.85rem;
 }
@@ -28,6 +34,7 @@
   background-color: rgba(7, 26, 69, 0.5);
   padding-block: 0.75em;
 }
+
 .selected h3 {
   font-weight: 500;
   font-size: 1.25rem;
@@ -41,9 +48,8 @@
 .svgWrapper {
   align-content: center;
   vertical-align: middle;
-  /*width: 2rem;*/
   transform: scale(1);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
 .svgWrapper > svg {
@@ -51,50 +57,62 @@
 }
 
 .project {
-  margin-inline: auto;
-  width: 97%;
-}
-
-.sectionBody {
-  display: grid;
-  gap: 0.75rem;
-}
-
-/*
-
-.sectionBody {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-}
-
-.projectWrapper {
-  position: sticky;
-  width: 40%;
-}
-
-.project {
-  position: absolute;
+  position: relative;
   transform-origin: top left;
   transition: opacity 200ms, transform 500ms, inset 500ms;
-  border-radius: 0.5em;
+  margin-inline: auto;
+  width: fit-content;
+  height: fit-content;
+
+  pointer-events: auto;
+  position: absolute;
+  inset: 0;
+}
+
+.project > div {
+  position: absolute;
+  inset: 0;
+}
+
+.project > img {
   object-fit: cover;
+  border-radius: 0.5em;
 }
 
 .project:has(~ .selectedProject) {
   opacity: 0;
-  inset: -10px 0 0 -10px;
 }
 
 .selectedProject {
-  inset: 0;
+  position: relative;
+}
+
+.selectedProject > img {
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.356);
 }
 
-.selectedProject ~ .project {
-  inset: 10px 0 0 10px;
+@media screen and (width > 1000px) {
+  .sectionBody {
+    grid-template-columns: 20rem auto;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .project:has(~ .selectedProject) {
+    opacity: 0;
+  }
+
+  .selectedProject ~ .project {
+    inset: 10px 0 0 20px;
+  }
+
+  .selectedProject:hover > div {
+    background-color: rgba(7, 26, 69, 0.8);
+    backdrop-filter: blur(5px);
+  }
 }
-*/
 
 @keyframes popGrow {
   0%,
