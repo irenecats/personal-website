@@ -20,36 +20,35 @@
 .sectionBody li {
   display: grid;
   grid-template-columns: 2rem 1fr;
-  gap: 5px;
+  gap: 0.75rem;
   cursor: pointer;
-  margin: 0.5rem;
-  padding-inline: 0.5rem;
+  margin-block: 0.5rem;
+  padding-inline: 0.75rem;
   pointer-events: auto;
   font-size: 0.85rem;
 }
 
 .selected {
-  border: #dadfe2 solid 2px;
-  border-radius: 5px;
+  border: #dadfe2 solid 3px;
+  border-radius: 25px;
   background-color: rgba(7, 26, 69, 0.5);
   padding-block: 0.75em;
-}
-
-.selected h3 {
-  font-weight: 500;
-  font-size: 1.25rem;
+  &.title {
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
 }
 
 .selected .svgWrapper {
   animation: popGrow 300ms linear;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .svgWrapper {
   align-content: center;
   vertical-align: middle;
   transform: scale(1);
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
 .svgWrapper > svg {
@@ -65,12 +64,12 @@
 }
 
 .projectCard {
+  display: block;
   position: absolute;
   transform-origin: top left;
-  transition: opacity 200ms, transform 500ms, inset 500ms, filter 1000ms;
+  transition: opacity 200ms, inset 800ms, filter 200ms;
   inset: 0;
-  width: fit-content;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   pointer-events: all;
   pointer-events: auto;
@@ -85,9 +84,40 @@
   margin-top: 1rem;
 }
 
+.image {
+  border: solid 4px #dadfe2;
+}
+
+.tag {
+  border: solid 3px #dadfe2;
+  border-radius: 30px;
+  padding: 0.25rem 1rem;
+}
+
 @media screen and (width > 1000px) {
+  .stickyContainer > div {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .sectionBody {
-    grid-template-columns: 20rem auto;
+    grid-template-columns: max(20rem, 30%) auto;
+    gap: min(7%, 8rem);
+  }
+
+  .sectionBody li {
+    margin-block: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .selected.title {
+    font-size: 1.8rem;
+  }
+
+  .imgContainer > img {
+    width: 100%;
   }
 
   .descriptionMov {
@@ -102,9 +132,9 @@
     gap: 1rem;
     transition: opacity 200ms;
     inset: 0;
-    padding: 2rem;
-    font-size: 1.2rem;
+    padding: 5rem 5rem 2rem 5rem;
     font-weight: 450;
+    font-size: 1.2rem;
     text-align: left;
   }
 
@@ -114,15 +144,16 @@
 
   /* Current selected project */
   .selectedProject {
-    inset: -10px 0 0 -10px;
+    filter: drop-shadow(0 0 25px #dadfe262);
+    inset: -20px 0 0 -20px;
+
     &:hover {
       .descriptionPc {
         opacity: 1;
-        backdrop-filter: contrast(0.5) blur(3px);
+        backdrop-filter: contrast(0.45) blur(3px);
       }
       .paragraf {
-        opacity: 1;
-        transition: opacity 400ms;
+        animation: appear 400ms forwards;
       }
       .tag {
         animation: appearPop 500ms forwards;
@@ -133,7 +164,7 @@
   /* previous projects on the list */
   .projectCard:has(~ .selectedProject) {
     opacity: 0;
-    inset: -10px 10px 0 -10px;
+    inset: -40px 0 0 -35px;
     pointer-events: none;
   }
 
@@ -147,6 +178,15 @@
   }
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes appearPop {
   0% {
     transform: scale(1);
@@ -157,6 +197,7 @@
   }
   50% {
     transform: scale(1.2);
+    opacity: 1;
   }
   100% {
     transform: scale(1);

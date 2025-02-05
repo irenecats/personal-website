@@ -18,7 +18,7 @@ export default function Home() {
       <PageSection idElement="about">
         <div>
           <h1>About</h1>
-          <div className="aboutText">
+          <div className="aboutText marginContent">
             <p>
               Hi! I am Irene, a Spanish multimedia engineering graduate with
               more than 3 years of work experience as a Software Engineer.
