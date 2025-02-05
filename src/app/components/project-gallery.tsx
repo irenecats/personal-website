@@ -24,7 +24,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
   return (
     <div className={style.stickyContainer}>
       <h1>Projects</h1>
-      <div className={style.sectionBody}>
+      <section className={style.sectionBody}>
         <ul>
           {projectList.map((elem: Project, index: number) => {
             return (
@@ -46,54 +46,79 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
             );
           })}
         </ul>
-        <div className="relative">
+        <section className={style.imgContainer}>
           {projectList.map((elem: Project, index: number) => {
             return (
-              <div
+              <button
+                href="#about"
                 key={index}
+                style={{
+                  zIndex: projectList.length - index,
+                }}
                 className={
                   index == selectedItem
-                    ? `${style.project} ${style.selectedProject}`
-                    : `${style.project}`
+                    ? `${style.projectCard} ${style.selectedProject}`
+                    : `${style.projectCard}`
                 }
-                style={{
-                  zIndex: 10 - index,
-                }}
               >
-                <Image
-                  src={elem.imageRef}
-                  width="800"
-                  height="450"
-                  alt="test img"
-                />
-                <div />
-              </div>
+                <div className={`${style.descriptionPc} rounded initHidden`}>
+                  <div className="scrollable">
+                    {elem.description.map((desc, index) => {
+                      return (
+                        <p
+                          key={index}
+                          className={`${style.paragraf} initHidden`}
+                          style={{
+                            transitionDelay: 150 + 150 * index + "ms",
+                          }}
+                        >
+                          {desc}
+                        </p>
+                      );
+                    })}
+                  </div>
+                  <footer className="flex mt-auto pt-4 gap-4">
+                    {elem.tags.map((tag, index) => {
+                      return (
+                        <span
+                          key={index}
+                          className={`${style.tag} initHidden`}
+                          style={{
+                            animationDelay: 150 + 150 * index + "ms",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      );
+                    })}
+                  </footer>
+                </div>
+                {
+                  <Image
+                    src={elem.imageRef}
+                    className={`image rounded`}
+                    width="800"
+                    height="450"
+                    alt="test img"
+                  />
+                }
+              </button>
             );
           })}
-        </div>
-      </div>
-      <div className={style.description} ref={descriptionRef}>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Felis luctus
-          suscipit litora tempus justo neque. Tincidunt rhoncus pellentesque
-          condimentum fames turpis suscipit.
-        </p>
-        <p>
-          Quisque vel ipsum primis habitant convallis velit netus fames. Porta
-          mus cras platea morbi orci viverra vestibulum. Habitant maecenas ut
-          mollis varius convallis.
-        </p>
-        <p>
-          Quisque vel ipsum primis habitant convallis velit netus fames. Porta
-          mus cras platea morbi orci viverra vestibulum. Habitant maecenas ut
-          mollis varius convallis.
-        </p>
-        <p>
-          Quisque vel ipsum primis habitant convallis velit netus fames. Porta
-          mus cras platea morbi orci viverra vestibulum. Habitant maecenas ut
-          mollis varius convallis.
-        </p>
-      </div>
+        </section>
+      </section>
+      <section
+        className={`${style.descriptionMov} scrollable`}
+        ref={descriptionRef}
+      >
+        {projectList.at(selectedItem)?.description.map((desc, index) => {
+          return (
+            <p key={index} className={style.paragraf}>
+              {desc}
+            </p>
+          );
+        })}
+      </section>
     </div>
   );
 }

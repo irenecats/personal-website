@@ -6,6 +6,7 @@
 .svgParent {
   margin-inline: auto;
   height: inherit;
+  max-height: 90svh;
 }
 
 .rocket {

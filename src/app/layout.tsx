@@ -32,9 +32,7 @@ export default function RootLayout({
           <NavLink title="projects" href="#projects" />
           <NavLink title="contact" href="#contact" />
         </NavBar>
-
-        <main className={`px-4 relative pointer-events-none`}>{children}</main>
-
+        <main className={`mx-4 relative pointer-events-none`}>{children}</main>
         <FooterMinimal />
       </body>
     </html>

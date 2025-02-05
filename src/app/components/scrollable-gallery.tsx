@@ -63,7 +63,7 @@ export default function ScrollableGallery() {
   }, [parentToTop, parentRef, parentHeight]);
 
   return (
-    <div ref={parentRef} className="h-[calc(100vh*4)]">
+    <div ref={parentRef} className="h-[calc(100vh*4)] mx-auto w-fit">
       <ProjectGallery selectedItem={selectedItem} handleClick={handleClick} />
     </div>
   );

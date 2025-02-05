@@ -56,39 +56,33 @@
   margin: auto;
 }
 
-.project {
-  position: relative;
+.descriptionPc {
+  display: none;
+}
+
+.descriptionMov {
+  display: block;
+}
+
+.projectCard {
+  position: absolute;
   transform-origin: top left;
-  transition: opacity 200ms, transform 500ms, inset 500ms;
-  margin-inline: auto;
+  transition: opacity 200ms, transform 500ms, inset 500ms, filter 1000ms;
+  inset: 0;
+  width: fit-content;
   width: fit-content;
   height: fit-content;
-
+  pointer-events: all;
   pointer-events: auto;
-  position: absolute;
-  inset: 0;
 }
 
-.project > div {
-  position: absolute;
-  inset: 0;
-}
-
-.project > img {
-  object-fit: cover;
-  border-radius: 0.5em;
-}
-
-.project:has(~ .selectedProject) {
-  opacity: 0;
-}
-
+.imgContainer,
 .selectedProject {
   position: relative;
 }
 
-.selectedProject > img {
-  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.356);
+.paragraf {
+  margin-top: 1rem;
 }
 
 @media screen and (width > 1000px) {
@@ -96,21 +90,77 @@
     grid-template-columns: 20rem auto;
   }
 
-  .description {
+  .descriptionMov {
     display: none;
   }
 
-  .project:has(~ .selectedProject) {
+  .descriptionPc {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: opacity 200ms;
+    inset: 0;
+    padding: 2rem;
+    font-size: 1.2rem;
+    font-weight: 450;
+    text-align: left;
+  }
+
+  .descriptionPc > div {
+    height: 85%;
+  }
+
+  /* Current selected project */
+  .selectedProject {
+    inset: -10px 0 0 -10px;
+    &:hover {
+      .descriptionPc {
+        opacity: 1;
+        backdrop-filter: contrast(0.5) blur(3px);
+      }
+      .paragraf {
+        opacity: 1;
+        transition: opacity 400ms;
+      }
+      .tag {
+        animation: appearPop 500ms forwards;
+      }
+    }
+  }
+
+  /* previous projects on the list */
+  .projectCard:has(~ .selectedProject) {
+    opacity: 0;
+    inset: -10px 10px 0 -10px;
+    pointer-events: none;
+  }
+
+  /* next projects on the list */
+  .selectedProject ~ .projectCard {
+    bottom: -10px;
+    filter: grayscale();
+    .descriptionPc {
+      background-color: #dadfe262;
+    }
+  }
+}
+
+@keyframes appearPop {
+  0% {
+    transform: scale(1);
     opacity: 0;
   }
-
-  .selectedProject ~ .project {
-    inset: 10px 0 0 20px;
+  70% {
+    opacity: 1;
   }
-
-  .selectedProject:hover > div {
-    background-color: rgba(7, 26, 69, 0.8);
-    backdrop-filter: blur(5px);
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

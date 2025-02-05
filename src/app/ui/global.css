@@ -6,10 +6,21 @@ html {
   scroll-behavior: smooth;
 }
 
+main {
+  margin-bottom: 3rem;
+}
+
 .section {
   margin: 1rem;
   height: fit-content;
   scroll-snap-align: start;
+  max-width: 2500px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.image {
+  object-fit: cover;
 }
 
 h1 {
@@ -23,6 +34,19 @@ h3 {
   text-wrap: balance;
 }
 
+/* UTILITY */
+.rounded {
+  border-radius: 5px;
+}
+
+.initHidden {
+  opacity: 0;
+}
+
+.scrollable {
+  overflow-y: auto;
+  pointer-events: auto;
+}
 /*
 #Hero-Thick {
   stroke-dasharray: 4405;
@@ -70,15 +94,14 @@ h3 {
   }
 }
 */
-
 #hero {
   align-content: center;
-  text-align: center;
   min-height: 100vh;
+  text-align: center;
   h1 {
+    margin-bottom: 1rem;
     font-weight: normal;
     font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
-    margin-bottom: 1rem;
   }
   h2 {
     font-size: clamp(1.5rem, calc(1vw + 1rem), 5rem);
@@ -88,8 +111,11 @@ h3 {
 #about {
   display: grid;
   align-items: center;
-
-  gap: 2rem;
+  gap: 4rem;
+  > div {
+    margin: auto;
+    max-width: 64rem;
+  }
 
   div div {
     font-size: 1.2rem;
@@ -110,15 +136,33 @@ h3 {
     pointer-events: auto;
   }
 }
-main {
-  margin-bottom: 3rem;
-}
-@media screen and (width > 1050px) {
-  #about {
-    grid-template-columns: 1fr 1fr;
-  }
 
+@media screen and (width > 1500px) {
   main {
     margin-bottom: 0;
+  }
+
+  #about {
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+
+    > div:last-child {
+      max-width: 45rem;
+    }
+
+    .aboutText {
+      margin-top: 3rem;
+      margin-left: 3.25rem;
+      font-weight: normal;
+      font-size: 1.35rem;
+      line-height: 165%;
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+
+    a {
+      margin-top: 2rem;
+    }
   }
 }
