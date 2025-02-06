@@ -10,7 +10,7 @@ export default function NavBar({ children }: NavBarProps) {
   const length = Children.count(children);
   return (
     <div className={styles.navwrap}>
-      <nav className={`${styles.navbar} highlight`}>
+      <nav className={styles.navbar}>
         {Children.map(children, (child: ReactNode, index: number) => {
           const useSeparator = index < length - 1;
           return (

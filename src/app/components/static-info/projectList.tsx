@@ -21,7 +21,7 @@ export const projectList: Project[] = [
     ],
     "/projects/project2.png",
     "",
-    ["React", "Java", "Angular"]
+    ["React", "Java", "Angular", "Java", "Angular"]
   ),
   new Project("Desktop Application Suite", [""], "/projects/project1.png"),
   new Project("Bachelor’s Degree Thesis", [""], "/projects/project2.png"),

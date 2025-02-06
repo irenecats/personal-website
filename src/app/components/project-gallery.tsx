@@ -22,7 +22,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
     }
   });
 
-  const selectedProject = projectList.at(selectedItem);
+  const project = projectList.at(selectedItem);
 
   return (
     <div className={style.stickyContainer}>
@@ -35,9 +35,8 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                 <li
                   key={index}
                   className={
-                    index == selectedItem
-                      ? `${style.selected} ${style.title}  highlight`
-                      : style.title
+                    `${style.title} ` +
+                    (index == selectedItem && `${style.selected}`)
                   }
                   onClick={() => {
                     handleClick(index);
@@ -52,7 +51,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
               );
             })}
           </ul>
-          <section className={style.imgContainer}>
+          <section className={`${style.imgContainer} relative`}>
             {projectList.map((elem: Project, index: number) => {
               return (
                 <a
@@ -62,9 +61,8 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                     zIndex: projectList.length - index,
                   }}
                   className={
-                    index == selectedItem
-                      ? `${style.projectCard} ${style.selectedProject}`
-                      : `${style.projectCard}`
+                    `${style.projectCard} ` +
+                    (index == selectedItem && `${style.selectedProject}`)
                   }
                 >
                   <div className={`${style.descriptionPc} rounded initHidden`}>
@@ -87,7 +85,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
         className={`${style.descriptionMov} scrollable`}
         ref={descriptionRef}
       >
-        <ProjectDescription project={selectedProject} />
+        <ProjectDescription project={project} />
       </section>
     </div>
   );

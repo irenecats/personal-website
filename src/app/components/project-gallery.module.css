@@ -7,11 +7,6 @@
   max-height: calc(100svh - 4.5rem);
 }
 
-.stickyContainer > div:last-child {
-  overflow-y: auto;
-  pointer-events: all;
-}
-
 .sectionBody {
   display: grid;
   gap: 0.75rem;
@@ -61,6 +56,7 @@
 
 .descriptionMov {
   display: block;
+  margin-top: 0.5rem;
   padding-inline: 1rem;
 }
 
@@ -76,12 +72,25 @@
   pointer-events: auto;
 }
 
-.imgContainer,
 .selectedProject {
   position: relative;
+  filter: drop-shadow(0 0 25px #dadfe262);
 }
 
-.paragraf {
+/* previous projects on the list */
+.projectCard:has(~ .selectedProject) {
+  top: -1rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* next projects on the list */
+.selectedProject ~ .projectCard {
+  top: 0.75rem;
+  filter: grayscale();
+}
+
+.paragraf ~ .paragraf {
   margin-top: 1rem;
 }
 
@@ -89,18 +98,27 @@
   border: solid 4px #dadfe2;
 }
 
+.tagFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
 .tag {
   border: solid 3px #dadfe2;
   border-radius: 30px;
   padding: 0.25rem 1rem;
+  min-width: 4rem;
 }
 
 @media screen and (width > 1000px) {
   .stickyContainer > div {
-    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100svh;
   }
 
   .sectionBody {
@@ -145,7 +163,6 @@
 
   /* Current selected project */
   .selectedProject {
-    filter: drop-shadow(0 0 25px #dadfe262);
     inset: -20px 0 0 -20px;
 
     &:hover {
@@ -164,15 +181,12 @@
 
   /* previous projects on the list */
   .projectCard:has(~ .selectedProject) {
-    opacity: 0;
     inset: -40px 0 0 -35px;
-    pointer-events: none;
   }
 
   /* next projects on the list */
   .selectedProject ~ .projectCard {
     bottom: -10px;
-    filter: grayscale();
     .descriptionPc {
       background-color: #dadfe262;
     }

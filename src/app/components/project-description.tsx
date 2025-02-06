@@ -29,7 +29,7 @@ export default function ProjectDescription({
           );
         })}
       </div>
-      <footer className="flex mt-auto pt-4 gap-6 justify-center">
+      <footer className={style.tagFooter}>
         {project?.tags.map((tag, index) => {
           return (
             <span
