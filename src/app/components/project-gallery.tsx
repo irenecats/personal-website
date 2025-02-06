@@ -4,6 +4,7 @@ import { Project, projectList } from "./static-info/projectList";
 import { useRef, useEffect, memo } from "react";
 import Separator, { SeparatorTypeEnum } from "./nav-separator";
 import style from "./project-gallery.module.css";
+import ProjectDescription from "./project-description";
 
 export default memo(ProjectGallery);
 
@@ -20,6 +21,8 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
       descriptionRef.current.scrollTop = 0;
     }
   });
+
+  const selectedProject = projectList.at(selectedItem);
 
   return (
     <div className={style.stickyContainer}>
@@ -65,36 +68,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                   }
                 >
                   <div className={`${style.descriptionPc} rounded initHidden`}>
-                    <div className="scrollable flex flex-col my-auto">
-                      {elem.description.map((desc, index) => {
-                        return (
-                          <p
-                            key={index}
-                            className={`${style.paragraf} initHidden`}
-                            style={{
-                              animationDelay: 150 + 150 * index + "ms",
-                            }}
-                          >
-                            {desc}
-                          </p>
-                        );
-                      })}
-                    </div>
-                    <footer className="flex mt-auto pt-4 gap-6">
-                      {elem.tags.map((tag, index) => {
-                        return (
-                          <span
-                            key={index}
-                            className={`${style.tag} initHidden`}
-                            style={{
-                              animationDelay: 150 + 150 * index + "ms",
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        );
-                      })}
-                    </footer>
+                    <ProjectDescription project={elem} isHidden={true} />
                   </div>
                   <Image
                     src={elem.imageRef}
@@ -113,13 +87,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
         className={`${style.descriptionMov} scrollable`}
         ref={descriptionRef}
       >
-        {projectList.at(selectedItem)?.description.map((desc, index) => {
-          return (
-            <p key={index} className={style.paragraf}>
-              {desc}
-            </p>
-          );
-        })}
+        <ProjectDescription project={selectedProject} />
       </section>
     </div>
   );
