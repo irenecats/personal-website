@@ -1,10 +1,8 @@
 "use client";
 import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
-import DecorativeBackground from "./components/decorative-bg";
 import Footer from "./components/footer";
 import PageSection from "./components/page-section";
-import ElementInView from "./components/ElementInView";
 import ScrollableGallery from "./components/scrollable-gallery";
 
 export default function Home() {
@@ -55,7 +53,6 @@ export default function Home() {
       <PageSection idElement="projects">
         <ScrollableGallery />
       </PageSection>
-      <Footer idElement="contact" />
     </>
   );
 }

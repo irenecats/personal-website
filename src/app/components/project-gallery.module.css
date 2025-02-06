@@ -160,6 +160,9 @@
   .descriptionPc > div {
     height: 85%;
   }
+  .tagFooter {
+    justify-content: start;
+  }
 
   /* Current selected project */
   .selectedProject {

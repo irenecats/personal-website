@@ -6,10 +6,10 @@ export const metadata: Metadata = {
 };
 import NavBar from "./components/navbar";
 import NavLink from "./components/nav-link";
-import FooterMinimal from "./components/footer-minimal";
 import { Inter } from "next/font/google";
 import "./ui/global.css";
 import InteractiveBackground from "./components/interactive-bg";
+import Footer from "./components/footer";
 
 const roboto = Inter({
   subsets: ["latin"],
@@ -33,7 +33,7 @@ export default function RootLayout({
           <NavLink title="contact" href="#contact" />
         </NavBar>
         <main className={`px-4 relative pointer-events-none`}>{children}</main>
-        <FooterMinimal />
+        <Footer idElement="contact" />
       </body>
     </html>
   );
