@@ -1,0 +1,66 @@
+#HeroSvgBt {
+  position: absolute;
+  bottom: -11rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#HeroThickBt {
+  stroke-dasharray: 4405;
+  stroke-dashoffset: 4405;
+  animation: drawLine 2s ease-in-out forwards;
+}
+
+#HeroThinBt {
+  stroke-dasharray: 4405;
+  stroke-dashoffset: 4405;
+
+  animation: drawLine 2s ease-in-out forwards;
+  animation-delay: 250ms;
+}
+
+#HeroSvgTp {
+  position: absolute;
+  inset: -0.5rem 0 0 -1.8rem;
+}
+
+#HeroThinTp {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 490;
+  animation: drawLineTop 750ms ease-in-out forwards;
+  animation-delay: 500ms;
+}
+
+#HeroThickTp {
+  stroke-dasharray: 580;
+  stroke-dashoffset: 570;
+  animation: drawLine2 750ms ease-in-out forwards;
+  animation-delay: 250ms;
+}
+
+@keyframes drawLine2 {
+  0% {
+    stroke-dasharray: 580;
+  }
+  100% {
+    stroke-dashoffset: 1120;
+  }
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 4405;
+  }
+  100% {
+    stroke-dashoffset: 8800;
+  }
+}
+
+@keyframes drawLineTop {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+  }
+}

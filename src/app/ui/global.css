@@ -16,7 +16,6 @@ main {
   max-width: 2000px;
   height: fit-content;
   min-height: 100vh;
-  scroll-snap-align: start;
 }
 
 h1 {
@@ -43,57 +42,13 @@ h3 {
   overflow-y: auto;
   pointer-events: auto;
 }
-/*
-#Hero-Thick {
-  stroke-dasharray: 4405;
-  stroke-dashoffset: 4405;
-  animation: drawLine 2s ease-in-out forwards;
-}
 
-#Hero-Thin {
-  stroke-dasharray: 4405;
-  stroke-dashoffset: 4405;
-
-  animation: drawLine 2s ease-in-out forwards;
-  animation-delay: 250ms;
-}
-
-#Thin-vector-top {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 490;
-  animation: drawLineTop 750ms ease-in-out forwards;
-  animation-delay: 500ms;
-}
-
-#Thick-vector-top {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: drawLineTop 750ms ease-in-out forwards;
-  animation-delay: 250ms;
-}
-
-@keyframes drawLine {
-  0% {
-    stroke-dashoffset: 4405;
-  }
-  100% {
-    stroke-dashoffset: 8800;
-  }
-}
-
-@keyframes drawLineTop {
-  0% {
-    stroke-dashoffset: 500;
-  }
-  100% {
-    stroke-dashoffset: 1000;
-  }
-}
-*/
 #hero {
   align-content: center;
   min-height: 100vh;
   text-align: center;
+  margin-bottom: 10rem;
+  position: relative;
   h1 {
     margin-bottom: 1rem;
     font-weight: normal;

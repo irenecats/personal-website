@@ -1,17 +1,17 @@
 "use client";
 import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
-import Footer from "./components/footer";
 import PageSection from "./components/page-section";
 import ScrollableGallery from "./components/scrollable-gallery";
+import DecorativeBgHeroBt from "./components/decoration/decorative-bg-hero-bt";
 
 export default function Home() {
   return (
     <>
-      <PageSection idElement="hero">
+      <PageSection idElement="hero" classes="relative">
         <h1>Irene Clemente Aracil</h1>
         <h2>Multimedia Engineer</h2>
-        {/*<DecorativeBackground />*/}
+        <DecorativeBgHeroBt />
       </PageSection>
       <PageSection idElement="about">
         <div>
