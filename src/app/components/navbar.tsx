@@ -1,5 +1,6 @@
 import { Children, ReactNode } from "react";
 import Separator, { SeparatorTypeEnum } from "./nav-separator";
+import styles from "./navbar.module.css";
 
 interface NavBarProps {
   children?: ReactNode | ReactNode[];
@@ -8,15 +9,18 @@ interface NavBarProps {
 export default function NavBar({ children }: NavBarProps) {
   const length = Children.count(children);
   return (
-    <div className="absolute w-full flex justify-center">
-      <nav className="flex justify-end gap-10 m-0 mt-6 px-5 font-semibold text-[#dadfe2] w-full max-w-[200rem]  ">
+    <div className={styles.navwrap}>
+      <nav className={styles.navbar}>
         {Children.map(children, (child: ReactNode, index: number) => {
           const useSeparator = index < length - 1;
           return (
             <>
-              <div className="navLink">{child}</div>
+              <div className={styles.navLink}>{child}</div>
               {useSeparator && (
-                <Separator separatorType={SeparatorTypeEnum.SparkleCustom} />
+                <Separator
+                  classStyle={styles.separator}
+                  separatorType={SeparatorTypeEnum.SparkleCustom}
+                />
               )}
             </>
           );

@@ -4,60 +4,46 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
 }
 
-body {
-}
-/*
-.navLink {
-  @apply uppercase tracking-wider  text-center;
-  width: 8rem;
+main {
+  margin-bottom: 3rem;
+  padding: 1rem;
 }
 
-.navLink a {
-  display: block;
-  width: 100%;
-}
-
-.navLink:hover::after {
-  transform: scaleX(1);
-  transition: transform 400ms ease-out;
-}
-
-.navLink::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  border-radius: 10px;
-  background-color: #dadfe2;
-
-  transform: scaleX(0);
-}
-*/
 .section {
-  margin: 1rem;
-  min-height: 100vh;
+  margin: auto;
+  max-width: 2000px;
   height: fit-content;
+  min-height: 100vh;
   scroll-snap-align: start;
 }
-/*
-#hero {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  h1 {
-    font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
-  }
-  h2 {
-    font-size: clamp(1.5rem, calc(1vw + 1rem), 5rem);
-  }
+
+h1 {
+  font-weight: 600;
+  font-size: 3.75rem;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* UTILITY */
+.rounded {
+  border-radius: 25px;
+}
+
+.initHidden {
+  opacity: 0;
+}
+
+.scrollable {
+  overflow-y: auto;
+  pointer-events: auto;
+}
+/*
 #Hero-Thick {
   stroke-dasharray: 4405;
   stroke-dashoffset: 4405;
@@ -104,15 +90,13 @@ body {
   }
 }
 */
-
 #hero {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
-  position: relative;
+  align-content: center;
+  min-height: 100vh;
   text-align: center;
   h1 {
+    margin-bottom: 1rem;
+    font-weight: normal;
     font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
   }
   h2 {
@@ -121,48 +105,67 @@ body {
 }
 
 #about {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  align-items: center;
+  gap: 4rem;
+  > div {
+    margin: auto;
+    max-width: 72rem;
 
-  h1 {
-    font-weight: 600;
-    font-size: 3.75rem;
+    > svg {
+      margin: auto;
+    }
   }
 
-  div {
+  div div {
     font-size: 1.2rem;
     line-height: 150%;
-    text-align: justify;
-    margin: auto;
-  }
-
-  > svg {
-    width: 100vw;
   }
 
   p {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
+    text-wrap: pretty;
+  }
+  p:first-of-type {
+    margin-top: 0.25rem;
+  }
+
+  a {
+    margin-top: 1rem;
+    padding: 0 0 0 0.75rem;
+    pointer-events: auto;
   }
 }
 
-#projects {
-  h1 {
-    font-weight: 600;
-    font-size: 3.75rem;
-    margin-top: 1.5rem;
-    margin-bottom: -1.5rem;
+@media screen and (width > 1500px) {
+  main {
+    margin-bottom: 0;
+  }
+
+  #about {
+    grid-template-columns: 58% 45%;
+    justify-content: space-around;
+
+    > div > svg {
+      margin: 0;
+    }
+
+    .aboutText {
+      font-weight: normal;
+      font-size: 1.35rem;
+      line-height: 165%;
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+
+    a {
+      margin-top: 2rem;
+    }
+  }
+
+  .marginContent {
+    margin-top: 3rem;
+    margin-left: 3.25rem;
   }
 }
-
-/*
-#about {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 15% 13rem 0px 13rem;
-}
-
-@media screen (max-width: 768px) {
-}
-*/

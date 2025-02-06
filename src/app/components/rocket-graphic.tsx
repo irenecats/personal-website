@@ -3,12 +3,15 @@ import styles from "./rocket-graphic.module.css";
 
 export default function RocketGraphic() {
   return (
-    <ElementInView animateClass={styles.rocketAnimation}>
+    <ElementInView
+      animateClass={styles.rocketAnimation}
+      parentClass={styles.svgRocketWrap}
+    >
       <svg
         viewBox="0 0 800 786"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={styles.svgRocketWrap}
+        className={styles.svgParent}
       >
         <path
           className={styles.rocket}

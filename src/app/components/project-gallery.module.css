@@ -1,59 +1,235 @@
-.titleRow {
-  margin: 1rem;
-  font-size: 1rem;
-  pointer-events: auto;
-  cursor: pointer;
+.stickyContainer {
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: calc(100svh - 4.5rem);
 }
 
-.titleRow div {
-  margin: 0 1rem;
+.sectionBody {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sectionBody li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.75rem;
+  cursor: pointer;
+  margin-block: 0.5rem;
+  padding-inline: 0.75rem;
+  pointer-events: auto;
+  font-size: 0.85rem;
 }
 
 .selected {
-  font-size: 1.5rem;
-  border: 2px solid white;
-  border-radius: 3px;
-  padding: 1rem 0;
+  border: #dadfe2 solid 3px;
+  border-radius: 25px;
+  background-color: rgba(7, 26, 69, 0.5);
+  padding-block: 0.75em;
+  &.title {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+}
+
+.selected .svgWrapper {
+  animation: popGrow 300ms linear;
+  font-size: 1.2rem;
 }
 
 .svgWrapper {
   align-content: center;
-  display: inline-block;
   vertical-align: middle;
-  width: 2rem;
+  transform: scale(1);
+  font-size: 0.8rem;
 }
 
 .svgWrapper > svg {
   margin: auto;
 }
 
-.svgWrapper + h3 {
-  display: inline-block;
+.descriptionPc {
+  display: none;
 }
 
-.projectWrapper {
-  width: 40%;
-  position: sticky;
+.descriptionMov {
+  display: block;
+  margin-top: 0.5rem;
+  padding-inline: 1rem;
 }
 
-.project {
-  border-radius: 0.5em;
-  object-fit: cover;
+.projectCard {
+  display: block;
   position: absolute;
   transform-origin: top left;
-  transition: opacity 200ms, transform 500ms, inset 500ms;
-}
-
-.project:has(~ .selectedProject) {
-  inset: -10px 0 0 -10px;
-  opacity: 0;
+  transition: opacity 200ms, inset 800ms, filter 200ms;
+  inset: 0;
+  width: 100%;
+  height: fit-content;
+  pointer-events: all;
+  pointer-events: auto;
 }
 
 .selectedProject {
-  inset: 0;
-  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.356);
+  position: relative;
+  filter: drop-shadow(0 0 25px #dadfe262);
 }
 
-.selectedProject ~ .project {
-  inset: 10px 0 0 10px;
+/* previous projects on the list */
+.projectCard:has(~ .selectedProject) {
+  top: -1rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* next projects on the list */
+.selectedProject ~ .projectCard {
+  top: 0.75rem;
+  filter: grayscale();
+}
+
+.paragraf ~ .paragraf {
+  margin-top: 1rem;
+}
+
+.image {
+  border: solid 4px #dadfe2;
+}
+
+.tagFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.tag {
+  border: solid 3px #dadfe2;
+  border-radius: 30px;
+  padding: 0.25rem 1rem;
+  min-width: 4rem;
+}
+
+@media screen and (width > 1000px) {
+  .stickyContainer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100svh;
+  }
+
+  .sectionBody {
+    grid-template-columns: max(20rem, 30%) auto;
+    gap: min(7%, 8rem);
+  }
+
+  .sectionBody li {
+    margin-block: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .selected.title {
+    font-size: 1.8rem;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+  }
+
+  .descriptionMov {
+    display: none;
+  }
+
+  .descriptionPc {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: opacity 200ms;
+    inset: 0;
+    padding: 5rem 5rem 2rem 5rem;
+    font-weight: 450;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .descriptionPc > div {
+    height: 85%;
+  }
+  .tagFooter {
+    justify-content: start;
+  }
+
+  /* Current selected project */
+  .selectedProject {
+    inset: -20px 0 0 -20px;
+
+    &:hover {
+      .descriptionPc {
+        opacity: 1;
+        backdrop-filter: contrast(0.45) blur(3px);
+      }
+      .paragraf {
+        animation: appear 400ms forwards;
+      }
+      .tag {
+        animation: appearPop 500ms forwards;
+      }
+    }
+  }
+
+  /* previous projects on the list */
+  .projectCard:has(~ .selectedProject) {
+    inset: -40px 0 0 -35px;
+  }
+
+  /* next projects on the list */
+  .selectedProject ~ .projectCard {
+    bottom: -10px;
+    .descriptionPc {
+      background-color: #dadfe262;
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearPop {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popGrow {
+  0%,
+  70%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
 }

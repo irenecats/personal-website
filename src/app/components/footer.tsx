@@ -1,46 +1,18 @@
-import Github from "../../../public/icons/github.svg";
-import Linkedin from "../../../public/icons/linkedin.svg";
+import SocialLink, { SocialEnum } from "./social-link";
 
 interface Props {
   idElement?: string;
 }
 
 export default function Footer({ idElement }: Props) {
-  /* TODO:
-   * Minimal nav bar (?)
-   * Create button icon element, use icons without borders and add style with css
-   * Hover animations
-   */
-
   return (
     <footer
       id={idElement}
-      className="snap-end text-[8375d] py-5 bottom-0 text-center"
+      className="relative flex flex-row justify-center gap-6 snap-end py-6 md:py-10 bg-[#dadfe2] z-10"
     >
-      <div className="flex flex-row space-x-5 pb-2 content-center justify-center">
-        <a
-          href="https://www.linkedin.com/in/irene-clemente-aracil"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pointer-events-auto"
-        >
-          <Linkedin
-            className="icon-socials"
-            alt="LinkedIn icon that redirects to my personal page"
-          />
-        </a>
-        <a
-          href="https://github.com/irenecats"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pointer-events-auto"
-        >
-          <Github
-            className="icon-socials"
-            alt="Github icon that redirects to my personal profile"
-          />
-        </a>
-      </div>
+      <SocialLink social={SocialEnum.EMAIL} />
+      <SocialLink social={SocialEnum.LINKEDIN} />
+      <SocialLink social={SocialEnum.GITHUB} />
     </footer>
   );
 }
