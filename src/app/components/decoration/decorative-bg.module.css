@@ -1,14 +1,11 @@
 .HeroSvgBt {
   position: absolute;
-  bottom: -11rem;
-  left: 50%;
-  transform: translate(-50%, 0);
+  bottom: -14rem;
 }
 
 .HeroSvgTp {
   position: absolute;
   inset: -0.5rem 0 0 -1.8rem;
-  pointer-events: none;
 }
 
 .Htop {
@@ -31,6 +28,11 @@
   animation-delay: 250ms;
 }
 
+.separator {
+  position: relative;
+  margin-block: 4rem;
+}
+
 /* TODO: ADD RANDOM TIME AND DELAY */
 .vector {
   stroke-dasharray: 1;
@@ -42,6 +44,11 @@
 .star {
   filter: drop-shadow(0 0 2px white);
   animation: appear 3s infinite;
+}
+
+.center {
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 @keyframes appear {

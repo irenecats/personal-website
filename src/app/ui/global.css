@@ -15,7 +15,6 @@ main {
   margin: auto;
   max-width: 2000px;
   height: fit-content;
-  min-height: 100vh;
 }
 
 h1 {
@@ -100,6 +99,7 @@ h3 {
   #about {
     grid-template-columns: 58% 45%;
     justify-content: space-around;
+    padding-block: 10rem 4rem;
 
     > div > svg {
       margin: 0;

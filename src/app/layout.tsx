@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} font-mono`}>
-      <body className={`antialiased bg-[#071a45] text-[#dadfe2]`}>
+      <body
+        className={`antialiased bg-[#071a45] text-[#dadfe2] overflow-x-clip`}
+      >
         <InteractiveBackground />
         <DecorativeBgHeroTp />
         <NavBar>

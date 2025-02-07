@@ -4,6 +4,7 @@ import RocketGraphic from "./components/rocket-graphic";
 import PageSection from "./components/page-section";
 import ScrollableGallery from "./components/scrollable-gallery";
 import DecorativeBgHeroBt from "./components/decoration/decorative-bg-hero-bt";
+import DecorativeSeparator from "./components/decoration/decorative-separator";
 
 export default function Home() {
   return (
@@ -49,7 +50,7 @@ export default function Home() {
         </div>
         <RocketGraphic />
       </PageSection>
-      <div className="bg-[#dadfe2] h-4"></div>
+      <DecorativeSeparator />
       <PageSection idElement="projects">
         <ScrollableGallery />
       </PageSection>
