@@ -6,6 +6,8 @@
 .HeroSvgTp {
   position: absolute;
   inset: -0.5rem 0 0 -1.8rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .Htop {
