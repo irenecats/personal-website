@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { projectList } from "./static-info/projectList";
+import { projectList } from "../static-info/projectList";
 import ProjectGallery from "./project-gallery";
 
 export default function ScrollableGallery() {

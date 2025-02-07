@@ -2,9 +2,9 @@
 import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
 import PageSection from "./components/page-section";
-import ScrollableGallery from "./components/scrollable-gallery";
 import DecorativeBgHeroBt from "./components/decoration/decorative-bg-hero-bt";
 import DecorativeSeparator from "./components/decoration/decorative-separator";
+import ScrollableGallery from "./components/project-gallery/scrollable-gallery";
 
 export default function Home() {
   return (
