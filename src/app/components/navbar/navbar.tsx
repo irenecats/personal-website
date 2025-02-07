@@ -1,6 +1,6 @@
 import { Children, ReactNode } from "react";
-import Separator, { SeparatorTypeEnum } from "./nav-separator";
 import styles from "./navbar.module.css";
+import Separator, { SeparatorTypeEnum } from "./nav-separator";
 
 interface NavBarProps {
   children?: ReactNode | ReactNode[];

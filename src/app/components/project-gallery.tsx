@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Project, projectList } from "./static-info/projectList";
 import { useRef, useEffect, memo } from "react";
-import Separator, { SeparatorTypeEnum } from "./nav-separator";
+import Separator, { SeparatorTypeEnum } from "./navbar/nav-separator";
 import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";
 

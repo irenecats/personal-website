@@ -4,13 +4,13 @@ export const metadata: Metadata = {
   title: "Irene Clemente's portfolio",
   description: "Generated with Next js",
 };
-import NavBar from "./components/navbar";
-import NavLink from "./components/nav-link";
+import NavLink from "./components/navbar/nav-link";
 import { Inter } from "next/font/google";
-import "./ui/global.css";
+import "./global.css";
 import InteractiveBackground from "./components/interactive-bg";
 import Footer from "./components/footer";
 import DecorativeBgHeroTp from "./components/decoration/decorative-bg-hero-tp";
+import NavBar from "./components/navbar/navbar";
 
 const roboto = Inter({
   subsets: ["latin"],
