@@ -20,6 +20,7 @@ main {
 h1 {
   font-weight: 600;
   font-size: 3.75rem;
+  font-family: var(--font-diphylleia);
 }
 
 h1,
@@ -51,7 +52,7 @@ h3 {
   h1 {
     margin-bottom: 1rem;
     font-weight: normal;
-    font-size: clamp(2.5rem, calc(3vw + 1rem), 10rem);
+    font-size: clamp(2.5rem, calc(6vw + 1rem), 9rem);
   }
   h2 {
     font-size: clamp(1.5rem, calc(1.5vw + 1rem), 5rem);

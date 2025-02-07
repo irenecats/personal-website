@@ -15,7 +15,7 @@ export default function DecorativeFooter() {
       height="350"
       fill="none"
       viewBox="0 0 3406 350"
-      className={style.center}
+      className={`relative ${style.center}`}
     >
       <path
         fill="currentcolor"
