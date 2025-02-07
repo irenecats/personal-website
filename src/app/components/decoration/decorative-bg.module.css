@@ -3,7 +3,6 @@
   bottom: -11rem;
   left: 50%;
   transform: translate(-50%, 0);
-  pointer-events: none;
 }
 
 .HeroSvgTp {
@@ -42,18 +41,18 @@
 
 .star {
   filter: drop-shadow(0 0 2px white);
-  animation: appear 3500ms infinite;
+  animation: appear 3s infinite;
 }
 
 @keyframes appear {
   0% {
-    opacity: 0;
+    opacity: 0.5;
   }
   50% {
-    opacity: 100;
+    opacity: 1;
   }
   100% {
-    opacity: 0;
+    opacity: 0.5;
   }
 }
 
