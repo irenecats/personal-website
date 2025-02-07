@@ -24,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} font-mono`}>
-      <body
-        className={`antialiased bg-[#071a45] text-[#dadfe2] overflow-x-hidden`}
-      >
+      <body className={`antialiased bg-[#071a45] text-[#dadfe2]`}>
         <InteractiveBackground />
         <DecorativeBgHeroTp />
         <NavBar>
@@ -34,7 +32,7 @@ export default function RootLayout({
           <NavLink title="projects" href="#projects" />
           <NavLink title="contact" href="#contact" />
         </NavBar>
-        <main className={`px-4 relative pointer-events-none overflow-hidden`}>
+        <main className={`px-4 relative pointer-events-none overflow-x-clip`}>
           {children}
         </main>
         <Footer idElement="contact" />
