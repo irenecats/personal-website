@@ -1,6 +1,6 @@
 .HeroSvgBt {
   position: absolute;
-  bottom: -14rem;
+  bottom: -11rem;
 }
 
 .HeroSvgTp {
@@ -42,7 +42,13 @@
 }
 
 .star {
+  opacity: 0;
+  transition: opacity 1s;
   filter: drop-shadow(0 0 2px white);
+}
+
+.animatedStar {
+  opacity: 0.3;
   animation: appear 3s infinite;
 }
 
@@ -53,13 +59,13 @@
 
 @keyframes appear {
   0% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }
 
