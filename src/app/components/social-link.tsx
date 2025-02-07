@@ -5,6 +5,7 @@ import SvgGitHub from "../../../public/icons/github.svg";
 
 interface Props {
   social: SocialEnum;
+  className: string;
 }
 
 export enum SocialEnum {
@@ -57,12 +58,14 @@ const socialMap = new Map<SocialEnum, ISocialInfo>([
   ],
 ]);
 
-export default function SocialLink({ social }: Props) {
+export default function SocialLink({ social, className }: Props) {
   const socialElem = socialMap.get(social);
-
+  const classes =
+    "text-[#071a45] w-fit p-4 rounded-xl pointer-events-auto flex justify-center " +
+    className;
   return (
     <a
-      className="text-[#071a45] w-fit p-4 rounded-xl pointer-events-auto flex justify-center"
+      className={classes}
       target="_blank"
       rel="noopener noreferrer"
       href={socialElem?.ref}
