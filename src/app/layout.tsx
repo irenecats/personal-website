@@ -34,7 +34,7 @@ export default function RootLayout({
           <NavLink title="projects" href="#projects" />
           <NavLink title="contact" href="#contact" />
         </NavBar>
-        <main className={`px-4 relative pointer-events-none overflow-x-clip`}>
+        <main className={`px-8 relative pointer-events-none overflow-x-clip`}>
           {children}
         </main>
         <Footer idElement="contact" />
