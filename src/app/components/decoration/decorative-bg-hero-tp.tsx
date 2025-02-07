@@ -27,8 +27,7 @@ export default function DecorativeBgHeroTp() {
         pathLength="1"
       />
       <path
-        id={style.HeroThickTp}
-        className={classes}
+        className={`${classes} ${style.HeroThickTp}`}
         stroke="currentcolor"
         d="M11.656 313.533c48.126-88.333 99.298-109.045 203.549-146.816C374.929 108.849 403.976 70.465 393.01 6.5"
         strokeLinecap="round"

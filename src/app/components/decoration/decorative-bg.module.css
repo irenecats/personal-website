@@ -26,7 +26,7 @@
   animation-delay: 500ms;
 }
 
-#HeroThickTp {
+.HeroThickTp {
   animation-delay: 250ms;
 }
 
@@ -35,7 +35,6 @@
   margin-block: 4rem;
 }
 
-/* TODO: ADD RANDOM TIME AND DELAY */
 .vector {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;

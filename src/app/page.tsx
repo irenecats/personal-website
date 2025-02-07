@@ -9,12 +9,12 @@ import ScrollableGallery from "./components/project-gallery/scrollable-gallery";
 export default function Home() {
   return (
     <>
-      <PageSection idElement="hero" classes="relative">
+      <PageSection idElement="hero" classes="relative hero">
         <h1>Irene Clemente Aracil</h1>
         <h2>Multimedia Engineer</h2>
         <DecorativeBgHeroBt />
       </PageSection>
-      <PageSection idElement="about">
+      <PageSection idElement="about" classes="about">
         <div>
           <h1>About</h1>
           <div className="aboutText marginContent">
