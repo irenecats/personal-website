@@ -1,28 +1,13 @@
 "use client";
 
 import style from "./decorative-bg.module.css";
-import { useEffect, useRef } from "react";
-
-function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import { useRef } from "react";
+import useRandomDelayAnimation from "./delay-animation";
 
 export default function DecorativeBgHeroBt() {
   const classes = `${style.Hbottom} ${style.vector} `;
   const ref = useRef<SVGAElement>(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      const max = 2000;
-      const min = 0;
-      for (const elem of ref.current?.childNodes) {
-        const rand = randomInteger(min, max) + "ms";
-        (elem as HTMLElement).style.animationDelay = rand;
-        (elem as HTMLElement).classList.add(style.animatedStar);
-        console.log(rand);
-      }
-    }
-  }, [ref]);
+  useRandomDelayAnimation(ref, 1000, 2500, style.animatedStar);
 
   return (
     <svg
