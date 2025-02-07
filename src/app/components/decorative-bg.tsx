@@ -3,8 +3,6 @@ import { useRef, useEffect } from "react";
 
 export default function DecorativeBackground() {
   const svgRef = useRef<SVGSVGElement>(null);
-  const bottomThick = useRef<SVGGeometryElement>(null);
-  const bottomThin = useRef<SVGGeometryElement>(null);
   const topThick = useRef<SVGGeometryElement>(null);
   const topThin = useRef<SVGGeometryElement>(null);
 

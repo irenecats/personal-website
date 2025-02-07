@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
 
+  output: "export",
+  distDir: "dist",
+  images: {
+    unoptimized: true,
+  },
   webpack(config) {
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
