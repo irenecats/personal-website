@@ -52,7 +52,9 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
             {projectList.map((elem: Project, index: number) => {
               return (
                 <a
-                  href="#about"
+                  href={elem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={index}
                   style={{
                     zIndex: projectList.length - index,
@@ -67,10 +69,10 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                   </div>
                   <Image
                     src={elem.imageRef}
-                    className={`${style.image} w-full rounded`}
+                    className={`${style.image} w-full rounded aspect-video object-cover`}
                     width="800"
                     height="450"
-                    alt="test img"
+                    alt={elem.imageAlt}
                   />
                 </a>
               );
@@ -78,12 +80,6 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
           </section>
         </section>
       </div>
-      <section
-        className={`${style.descriptionMov} scrollable`}
-        ref={descriptionRef}
-      >
-        <ProjectDescription project={project} />
-      </section>
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function ProjectDescription({
 
   return (
     <>
-      <div className="scrollable flex flex-col my-auto">
+      <div className="flex flex-col my-auto pointer-events-none font-semibold justify-center">
         {project?.description.map((desc, index) => {
           return (
             <p
