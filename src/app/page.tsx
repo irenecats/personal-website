@@ -8,6 +8,7 @@ export default function Home() {
       <PageSection idElement="hero">
         <h1>Irene Clemente Aracil</h1>
         <h2>Multimedia Engineer</h2>
+        {/*<DecorativeBackground />*/}
       </PageSection>
       <PageSection idElement="about">
         <div>
@@ -39,7 +40,7 @@ export default function Home() {
               href="IreneClemente-CV.pdf"
               className="flex flex-row items-center w-fit bg-[#dadfe2] mt-10 rounded-xl text-[#071a45] font-extrabold cursor-pointer"
             >
-              Download CV
+              Download CV <ArrowDown className="size-10 fill-[#071a45]" />
             </a>
           </div>
         </div>
