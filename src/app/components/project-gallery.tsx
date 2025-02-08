@@ -4,6 +4,7 @@ import { Project, projectList } from "./static-info/projectList";
 import { useRef, useEffect, memo } from "react";
 import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";
+import StarSeparator from "./svgs/star-separator-svg";
 
 export default memo(ProjectGallery);
 
@@ -41,6 +42,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                     handleClick(index);
                   }}
                 >
+                  <StarSeparator className={style.svgWrapper} />
                   <h3>{elem.title}</h3>
                 </li>
               );

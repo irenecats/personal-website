@@ -1,3 +1,8 @@
+import { ReactElement } from "react";
+import EmailSvg from "./svgs/email-svg";
+import LinkedInSvg from "./svgs/linkedin-svg";
+import GithubSvg from "./svgs/github-svg";
+
 interface Props {
   social: SocialEnum;
 }
@@ -10,6 +15,7 @@ export enum SocialEnum {
 
 interface ISocialInfo {
   ref: string;
+  svg: () => ReactElement;
 }
 
 const socialMap = new Map<SocialEnum, ISocialInfo>([
@@ -17,18 +23,27 @@ const socialMap = new Map<SocialEnum, ISocialInfo>([
     SocialEnum.EMAIL,
     {
       ref: "mailto:ireneclemt@gmail.com",
+      svg: () => (
+        <EmailSvg className="size-14 md:size-16 m-auto min-w-[4rem]" />
+      ),
     },
   ],
   [
     SocialEnum.LINKEDIN,
     {
       ref: "https://www.linkedin.com/in/irene-clemente-aracil",
+      svg: () => (
+        <LinkedInSvg className="size-14 md:size-16 m-auto min-w-[4rem]" />
+      ),
     },
   ],
   [
     SocialEnum.GITHUB,
     {
       ref: "https://github.com/irenecats",
+      svg: () => (
+        <GithubSvg className="size-14 md:size-16 m-auto min-w-[4rem]" />
+      ),
     },
   ],
 ]);
@@ -43,7 +58,7 @@ export default function SocialLink({ social }: Props) {
       rel="noopener noreferrer"
       href={socialElem?.ref}
     >
-      TMP
+      {socialElem?.svg()}
     </a>
   );
 }
