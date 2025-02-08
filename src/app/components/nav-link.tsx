@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 interface NavLinkProps {
   title: string;
   href?: string;
@@ -8,8 +6,8 @@ interface NavLinkProps {
 
 export default function NavLink({ title, href }: NavLinkProps) {
   return (
-    <Link className={"m-auto"} href={href ?? title}>
+    <a className={"m-auto"} href={href ?? title}>
       {title}
-    </Link>
+    </a>
   );
 }
