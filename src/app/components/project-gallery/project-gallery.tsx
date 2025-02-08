@@ -1,10 +1,10 @@
 "use client";
-import Image from "next/image";
 import { Project, projectList } from "../static-info/projectList";
 import { useRef, useEffect, memo } from "react";
-import Separator, { SeparatorTypeEnum } from "../navbar/nav-separator";
 import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";
+import StarSeparator from "../svgs/star-separator-svg";
+import Image from "next/image";
 
 export default memo(ProjectGallery);
 
@@ -42,10 +42,7 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                     handleClick(index);
                   }}
                 >
-                  <Separator
-                    separatorType={SeparatorTypeEnum.SparkleCustom}
-                    classStyle={style.svgWrapper}
-                  />
+                  <StarSeparator className={style.svgWrapper} />
                   <h3>{elem.title}</h3>
                 </li>
               );

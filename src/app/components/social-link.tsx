@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
-import SvgEmail from "../../../public/icons/email.svg";
-import SvgLinkedIn from "../../../public/icons/linkedin.svg";
-import SvgGitHub from "../../../public/icons/github.svg";
+import EmailSvg from "./svgs/email-svg";
+import LinkedInSvg from "./svgs/linkedin-svg";
+import GithubSvg from "./svgs/github-svg";
 
 interface Props {
   social: SocialEnum;
@@ -25,10 +25,7 @@ const socialMap = new Map<SocialEnum, ISocialInfo>([
     {
       ref: "mailto:ireneclemt@gmail.com",
       svg: () => (
-        <SvgEmail
-          alt="Letter icon"
-          className="size-14 md:size-16 m-auto min-w-[4rem]"
-        />
+        <EmailSvg className="size-14 md:size-16 m-auto min-w-[4rem]" />
       ),
     },
   ],
@@ -37,10 +34,7 @@ const socialMap = new Map<SocialEnum, ISocialInfo>([
     {
       ref: "https://www.linkedin.com/in/irene-clemente-aracil",
       svg: () => (
-        <SvgLinkedIn
-          alt="LinkedIn icon that redirects to my personal page"
-          className="size-14 md:size-16 m-auto min-w-[4rem]"
-        />
+        <LinkedInSvg className="size-14 md:size-16 m-auto min-w-[4rem]" />
       ),
     },
   ],
@@ -49,10 +43,7 @@ const socialMap = new Map<SocialEnum, ISocialInfo>([
     {
       ref: "https://github.com/irenecats",
       svg: () => (
-        <SvgGitHub
-          alt="Github icon that redirects to my personal profile"
-          className="size-14 md:size-16 m-auto min-w-[4rem]"
-        />
+        <GithubSvg className="size-14 md:size-16 m-auto min-w-[4rem]" />
       ),
     },
   ],

@@ -19,11 +19,11 @@ export const projectList: Project[] = [
         "Porta mus cras platea morbi orci viverra vestibulum. " +
         "Habitant maecenas ut mollis varius convallis.",
     ],
-    "/projects/project2.png",
+    "./projects/project2.png",
     "",
     ["React", "Java", "Angular", "Java", "Angular"]
   ),
-  new Project("Desktop Application Suite", [""], "/projects/project1.png"),
-  new Project("Bachelor’s Degree Thesis", [""], "/projects/project2.png"),
-  new Project("Go! Go!! Robot Brawl", [""], "/projects/project2.png"),
+  new Project("Desktop Application Suite", [""], "./projects/project1.png"),
+  new Project("Bachelor’s Degree Thesis", [""], "./projects/project2.png"),
+  new Project("Go! Go!! Robot Brawl", [""], "./projects/project2.png"),
 ];
