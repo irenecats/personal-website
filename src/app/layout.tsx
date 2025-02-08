@@ -6,14 +6,8 @@ export const metadata: Metadata = {
 };
 import NavBar from "./components/navbar";
 import NavLink from "./components/nav-link";
-import { Inter } from "next/font/google";
 import "./ui/global.css";
 import Footer from "./components/footer";
-
-const roboto = Inter({
-  subsets: ["latin"],
-  variable: "--font-roboto-mono",
-});
 
 export default function RootLayout({
   children,
@@ -21,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${roboto.variable} font-mono`}>
+    <html lang="en" className={`font-mono`}>
       <body
         className={`antialiased bg-[#071a45] text-[#dadfe2] overflow-x-hidden`}
       >
