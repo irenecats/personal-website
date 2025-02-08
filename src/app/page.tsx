@@ -1,7 +1,7 @@
 "use client";
-import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
 import PageSection from "./components/page-section";
+import ArrowDownSvg from "./components/svgs/arrow-down-svg";
 import ScrollableGallery from "./components/scrollable-gallery";
 
 export default function Home() {
@@ -42,7 +42,7 @@ export default function Home() {
               href="IreneClemente-CV.pdf"
               className="flex flex-row items-center w-fit bg-[#dadfe2] mt-10 rounded-xl text-[#071a45] font-extrabold cursor-pointer"
             >
-              Download CV <ArrowDown className="size-10 fill-[#071a45]" />
+              Download CV <ArrowDownSvg className="size-10 fill-[#071a45]" />
             </a>
           </div>
         </div>

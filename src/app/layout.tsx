@@ -4,18 +4,16 @@ export const metadata: Metadata = {
   title: "Irene Clemente's portfolio",
   description: "Generated with Next js",
 };
+import { Inter } from "next/font/google";
 import NavBar from "./components/navbar";
 import NavLink from "./components/nav-link";
-import { Inter } from "next/font/google";
 import "./ui/global.css";
 import InteractiveBackground from "./components/interactive-bg";
 import Footer from "./components/footer";
-
 const roboto = Inter({
   subsets: ["latin"],
   variable: "--font-roboto-mono",
 });
-
 export default function RootLayout({
   children,
 }: Readonly<{

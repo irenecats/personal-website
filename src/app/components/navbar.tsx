@@ -1,6 +1,6 @@
 import { Children, ReactNode } from "react";
-import Separator, { SeparatorTypeEnum } from "./nav-separator";
 import styles from "./navbar.module.css";
+import StarSeparator from "./svgs/star-separator-svg";
 
 interface NavBarProps {
   children?: ReactNode | ReactNode[];
@@ -16,12 +16,7 @@ export default function NavBar({ children }: NavBarProps) {
           return (
             <>
               <div className={styles.navLink}>{child}</div>
-              {useSeparator && (
-                <Separator
-                  classStyle={styles.separator}
-                  separatorType={SeparatorTypeEnum.SparkleCustom}
-                />
-              )}
+              {useSeparator && <StarSeparator className={styles.separator} />}
             </>
           );
         })}
