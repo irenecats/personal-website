@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
 
   output: "export",
-  distDir: "dist",
   images: {
     unoptimized: true,
   },
