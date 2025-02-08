@@ -5,6 +5,7 @@ import { useRef, useEffect, memo } from "react";
 import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";
 import StarSeparator from "./svgs/star-separator-svg";
+import Image from "next/image";
 
 export default memo(ProjectGallery);
 
@@ -65,6 +66,13 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                   <div className={`${style.descriptionPc} rounded initHidden`}>
                     <ProjectDescription project={elem} isHidden={true} />
                   </div>
+                  <Image
+                    src={elem.imageRef}
+                    className={`${style.image} w-full rounded`}
+                    width="800"
+                    height="450"
+                    alt="test img"
+                  />
                 </a>
               );
             })}
