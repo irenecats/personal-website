@@ -29,6 +29,19 @@ h3 {
   text-wrap: balance;
 }
 
+/*  -- SCROLLBAR --  */
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: #1c2c57;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3753a1; /*#dadfe2;*/
+  border-radius: 100vw;
+}
+
 /* UTILITY */
 .rounded {
   border-radius: 25px;
