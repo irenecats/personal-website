@@ -2,7 +2,6 @@
 
 import { Project, projectList } from "./static-info/projectList";
 import { useRef, useEffect, memo } from "react";
-import Separator, { SeparatorTypeEnum } from "./nav-separator";
 import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";
 
@@ -42,10 +41,6 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                     handleClick(index);
                   }}
                 >
-                  <Separator
-                    separatorType={SeparatorTypeEnum.SparkleCustom}
-                    classStyle={style.svgWrapper}
-                  />
                   <h3>{elem.title}</h3>
                 </li>
               );

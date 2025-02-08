@@ -1,5 +1,4 @@
 "use client";
-import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
 import PageSection from "./components/page-section";
 
