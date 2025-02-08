@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { Project, projectList } from "./static-info/projectList";
 import { useRef, useEffect, memo } from "react";
 import Separator, { SeparatorTypeEnum } from "./nav-separator";
