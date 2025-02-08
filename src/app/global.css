@@ -38,8 +38,8 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3753a1; /*#dadfe2;*/
   border-radius: 100vw;
+  background-color: #3753a1;
 }
 
 /* UTILITY */
@@ -57,11 +57,11 @@ h3 {
 }
 
 .hero {
+  position: relative;
   align-content: center;
+  margin-bottom: 15rem;
   min-height: 100vh;
   text-align: center;
-  margin-bottom: 15rem;
-  position: relative;
   h1 {
     margin-bottom: 1rem;
     font-weight: normal;
@@ -78,8 +78,8 @@ h3 {
   gap: 4rem;
   > div {
     margin: auto;
+    width: 100%;
     max-width: 72rem;
-
     > svg {
       margin: auto;
     }
