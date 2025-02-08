@@ -19,7 +19,7 @@ export const projectList: Project[] = [
         "Porta mus cras platea morbi orci viverra vestibulum. " +
         "Habitant maecenas ut mollis varius convallis.",
     ],
-    "/projects/project2.png",
+    "./projects/project2.png",
     "",
     ["React", "Java", "Angular", "Java", "Angular"]
   ),
