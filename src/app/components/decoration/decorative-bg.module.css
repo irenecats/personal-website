@@ -1,0 +1,80 @@
+.HeroSvgBt {
+  position: absolute;
+  bottom: -11rem;
+}
+
+.HeroSvgTp {
+  position: absolute;
+  inset: -0.5rem 0 0 -1.8rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.Htop {
+  animation-duration: 750ms;
+}
+
+.Hbottom {
+  animation-duration: 2s;
+}
+
+.HeroThinBt {
+  animation-delay: 300ms;
+}
+
+.HThinTp {
+  animation-delay: 500ms;
+}
+
+.HeroThickTp {
+  animation-delay: 250ms;
+}
+
+.separator {
+  position: relative;
+  margin-block: 4rem;
+}
+
+.vector {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation-fill-mode: forwards;
+  animation-name: drawLine;
+}
+
+.star {
+  opacity: 0;
+  transition: opacity 1s;
+  filter: drop-shadow(0 0 2px white);
+}
+
+.animatedStar {
+  opacity: 0.3;
+  animation: appear 3s infinite;
+}
+
+.center {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 2;
+  }
+}

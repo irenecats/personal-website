@@ -522,7 +522,10 @@ canvas.addEventListener("mousemove", (e) => {
   if (timer) clearTimeout(timer);
   timer = setTimeout(mouseStopped, config.MOUSE_STOP_TIMER);
   config.FOLLOW_MOUSE = true;
-  config.MOUSE_POS = { x: e.offsetX, y: e.offsetY };
+  config.MOUSE_POS = {
+    x: scaleByPixelRatio(e.offsetX),
+    y: scaleByPixelRatio(e.offsetY),
+  };
 });
 
 function mouseStopped() {
@@ -624,9 +627,6 @@ function followPath() {
 }
 
 function followPosition(position) {
-  position.x = scaleByPixelRatio(position.x);
-  position.y = scaleByPixelRatio(position.y);
-
   updatePointerMoveData(pointer, position.x, position.y);
 }
 
@@ -638,10 +638,7 @@ function approachPosition(position) {
   effectToPos.y =
     effectToPos.y * config.MOUSE_SNAP_DISTANCE + pointer.lastPos.y;
 
-  const x = scaleByPixelRatio(effectToPos.x);
-  const y = scaleByPixelRatio(effectToPos.y);
-
-  updatePointerMoveData(pointer, x, y);
+  updatePointerMoveData(pointer, effectToPos.x, effectToPos.y);
 }
 
 function applyInputs() {

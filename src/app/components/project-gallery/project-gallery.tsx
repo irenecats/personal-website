@@ -1,10 +1,9 @@
 "use client";
-
-import { Project, projectList } from "./static-info/projectList";
+import { Project, projectList } from "../static-info/projectList";
 import { useRef, useEffect, memo } from "react";
 import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";
-import StarSeparator from "./svgs/star-separator-svg";
+import StarSeparator from "../svgs/star-separator-svg";
 import Image from "next/image";
 
 export default memo(ProjectGallery);

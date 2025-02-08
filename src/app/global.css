@@ -15,19 +15,31 @@ main {
   margin: auto;
   max-width: 2000px;
   height: fit-content;
-  min-height: 100vh;
-  scroll-snap-align: start;
 }
 
 h1 {
   font-weight: 600;
   font-size: 3.75rem;
+  font-family: var(--font-diphylleia);
 }
 
 h1,
 h2,
 h3 {
   text-wrap: balance;
+}
+
+/*  -- SCROLLBAR --  */
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: #1c2c57;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3753a1; /*#dadfe2;*/
+  border-radius: 100vw;
 }
 
 /* UTILITY */
@@ -43,68 +55,24 @@ h3 {
   overflow-y: auto;
   pointer-events: auto;
 }
-/*
-#Hero-Thick {
-  stroke-dasharray: 4405;
-  stroke-dashoffset: 4405;
-  animation: drawLine 2s ease-in-out forwards;
-}
 
-#Hero-Thin {
-  stroke-dasharray: 4405;
-  stroke-dashoffset: 4405;
-
-  animation: drawLine 2s ease-in-out forwards;
-  animation-delay: 250ms;
-}
-
-#Thin-vector-top {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 490;
-  animation: drawLineTop 750ms ease-in-out forwards;
-  animation-delay: 500ms;
-}
-
-#Thick-vector-top {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: drawLineTop 750ms ease-in-out forwards;
-  animation-delay: 250ms;
-}
-
-@keyframes drawLine {
-  0% {
-    stroke-dashoffset: 4405;
-  }
-  100% {
-    stroke-dashoffset: 8800;
-  }
-}
-
-@keyframes drawLineTop {
-  0% {
-    stroke-dashoffset: 500;
-  }
-  100% {
-    stroke-dashoffset: 1000;
-  }
-}
-*/
-#hero {
+.hero {
   align-content: center;
   min-height: 100vh;
   text-align: center;
+  margin-bottom: 15rem;
+  position: relative;
   h1 {
     margin-bottom: 1rem;
     font-weight: normal;
-    font-size: clamp(2.5rem, calc(2.5vw + 1rem), 10rem);
+    font-size: clamp(2.5rem, calc(6vw + 1rem), 9rem);
   }
   h2 {
-    font-size: clamp(1.5rem, calc(1vw + 1rem), 5rem);
+    font-size: clamp(1.5rem, calc(1.5vw + 1rem), 5rem);
   }
 }
 
-#about {
+.about {
   display: grid;
   align-items: center;
   gap: 4rem;
@@ -137,14 +105,24 @@ h3 {
   }
 }
 
+.social svg {
+  transform: scale(1);
+  transition: transform 500ms;
+}
+
+.social:hover svg {
+  transform: scale(1.2);
+}
+
 @media screen and (width > 1500px) {
   main {
     margin-bottom: 0;
   }
 
-  #about {
+  .about {
     grid-template-columns: 58% 45%;
     justify-content: space-around;
+    padding-block: 10rem 4rem;
 
     > div > svg {
       margin: 0;

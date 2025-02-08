@@ -1,6 +1,6 @@
 import { Children, ReactNode } from "react";
 import styles from "./navbar.module.css";
-import StarSeparator from "./svgs/star-separator-svg";
+import StarSeparator from "../svgs/star-separator-svg";
 
 interface NavBarProps {
   children?: ReactNode | ReactNode[];

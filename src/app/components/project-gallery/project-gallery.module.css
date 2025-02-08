@@ -166,7 +166,7 @@
 
   /* Current selected project */
   .selectedProject {
-    inset: -20px 0 0 -20px;
+    inset: -20px 0 0 -30px;
 
     &:hover {
       .descriptionPc {
