@@ -2,7 +2,6 @@
 import ArrowDown from "../../public/icons/arrow-down.svg";
 import RocketGraphic from "./components/rocket-graphic";
 import PageSection from "./components/page-section";
-import ScrollableGallery from "./components/scrollable-gallery";
 
 export default function Home() {
   return (
@@ -49,9 +48,6 @@ export default function Home() {
         <RocketGraphic />
       </PageSection>
       <div className="bg-[#dadfe2] h-4"></div>
-      <PageSection idElement="projects">
-        <ScrollableGallery />
-      </PageSection>
     </>
   );
 }
