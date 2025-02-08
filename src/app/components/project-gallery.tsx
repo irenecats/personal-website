@@ -68,13 +68,6 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                   <div className={`${style.descriptionPc} rounded initHidden`}>
                     <ProjectDescription project={elem} isHidden={true} />
                   </div>
-                  <Image
-                    src={elem.imageRef}
-                    className={`${style.image} w-full rounded`}
-                    width="800"
-                    height="450"
-                    alt="test img"
-                  />
                 </a>
               );
             })}
