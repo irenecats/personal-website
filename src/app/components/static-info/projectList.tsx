@@ -11,6 +11,16 @@ export class Project {
 
 export const projectList: Project[] = [
   new Project(
+    "Personal Website",
+    [
+      "A place to showcase my current projects and knowledge. Hope you like it!",
+    ],
+    "./projects/website.png",
+    "website fluid background effect",
+    ["React", "NextJS", "Node", "Github Actions"],
+    "https://github.com/irenecats/personal-website"
+  ),
+  new Project(
     "Veronte Suite",
     [
       " I had a major role in the development and maintenance of 12 Java-based aeronautic apps during a critical turning point in the company's transition to a new ecosystem. These apps, are used to visually configure the parameters required on each stage of a UAV autopilot calibration and flight monitoring.",
@@ -47,15 +57,5 @@ export const projectList: Project[] = [
     "The game's logo on top of a plain background",
     ["C++", "OpenGL", "GLSL", "Agile"],
     "https://tako-ko.itch.io/gogo-robot-brawl"
-  ),
-  new Project(
-    "Personal Website",
-    [
-      "A place to showcase my current projects and knowledge. Hope you like it!",
-    ],
-    "./projects/website.png",
-    "website fluid background effect",
-    ["React", "NextJS", "Node", "Github Actions"],
-    "https://github.com/irenecats/personal-website"
   ),
 ];
