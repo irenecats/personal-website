@@ -5,7 +5,8 @@
 
 .svgParent {
   margin-right: auto;
-  height: inherit;
+  height: auto;
+  width: auto;
   max-height: 90svh;
   max-width: 45rem;
 }
