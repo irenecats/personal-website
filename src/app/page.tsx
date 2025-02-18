@@ -21,7 +21,7 @@ export default function Home() {
             <p>
               Hi! I am Irene, a Spanish multimedia engineering graduate with
               more than 3 years of work experience as a Software Engineer.
-              Recently moved to Shinjuku, I’m looking for new opportunitiesin
+              Recently moved to Shinjuku, I’m looking for new opportunities in
               Tokyo!
             </p>
             <p>
