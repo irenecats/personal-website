@@ -1,5 +1,5 @@
 "use client";
-import { Project, projectList } from "../static-info/projectList";
+import { Project, projectList } from "../../static-info/projectList";
 import { useRef, useEffect, memo } from "react";
 import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";

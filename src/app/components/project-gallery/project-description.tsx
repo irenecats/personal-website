@@ -1,4 +1,4 @@
-import { Project } from "../static-info/projectList";
+import { Project } from "../../static-info/projectList";
 import style from "./project-gallery.module.css";
 
 interface Props {
