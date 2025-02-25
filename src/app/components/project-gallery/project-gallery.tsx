@@ -5,6 +5,7 @@ import style from "./project-gallery.module.css";
 import ProjectDescription from "./project-description";
 import StarSeparator from "../svgs/star-separator-svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default memo(ProjectGallery);
 
@@ -16,19 +17,21 @@ interface Props {
 function ProjectGallery({ selectedItem, handleClick }: Props) {
   const descriptionRef = useRef<HTMLDivElement>(null);
 
+  //Scroll to top of description when scrolling between projects in mobile
   useEffect(() => {
     if (descriptionRef.current) {
       descriptionRef.current.scrollTop = 0;
     }
   });
-
+  const projectInfo = useTranslations("Projects");
   return (
     <div className={style.stickyContainer}>
       <div>
         <h1>Projects</h1>
         <section className={`${style.sectionBody} marginContent`}>
           <ul>
-            {projectList.map((elem: Project, index: number) => {
+            {projectList.map((project: Project, index: number) => {
+              const projectTitle = "p" + project?.id + "_title";
               return (
                 <li
                   key={index}
@@ -41,16 +44,18 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                   }}
                 >
                   <StarSeparator className={style.svgWrapper} />
-                  <h3>{elem.title}</h3>
+                  <h3>{projectInfo(projectTitle)}</h3>
                 </li>
               );
             })}
           </ul>
           <section className={`${style.imgContainer} relative`}>
-            {projectList.map((elem: Project, index: number) => {
+            {projectList.map((project: Project, index: number) => {
+              const projectImgAlt = "p" + project?.id + "_alt";
+
               return (
                 <a
-                  href={elem.link}
+                  href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   key={index}
@@ -63,14 +68,14 @@ function ProjectGallery({ selectedItem, handleClick }: Props) {
                   }
                 >
                   <div className={`${style.descriptionPc} rounded initHidden`}>
-                    <ProjectDescription project={elem} isHidden={true} />
+                    <ProjectDescription project={project} isHidden={true} />
                   </div>
                   <Image
-                    src={elem.imageRef}
+                    src={project.imageRef}
                     className={`${style.image} w-full rounded aspect-video object-cover`}
                     width="800"
                     height="450"
-                    alt={elem.imageAlt}
+                    alt={projectInfo(projectImgAlt)}
                   />
                 </a>
               );
