@@ -17,6 +17,10 @@ main {
   height: fit-content;
 }
 
+.button {
+  pointer-events: auto;
+}
+
 h1 {
   font-weight: 600;
   font-size: 3.75rem;
@@ -112,6 +116,26 @@ h3 {
 
 .social:hover svg {
   transform: scale(1.2);
+}
+
+.roundButton {
+  border: 2px solid #071a45;
+  border-radius: 50%;
+  background-color: #dadfe2;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: #071a45;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+@media screen and (width >= 820px) {
+  .roundButton {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
 }
 
 @media screen and (width > 1500px) {

@@ -8,6 +8,7 @@ import "./global.css";
 import { Inter, Diphylleia } from "next/font/google";
 import Providers from "./providers";
 import { localeOptions } from "../static-info/localeOptions";
+import LocaleSwitcher from "../components/locale-switcher";
 
 // ---- METADATA
 export const metadata: Metadata = {
@@ -27,7 +28,6 @@ export const diphylleia = Diphylleia({
 });
 
 // ---- INTERNATIONALIZATION
-
 export async function generateStaticParams() {
   return localeOptions.map((locale) => ({
     locale,
@@ -62,6 +62,7 @@ export default async function RootLayout({
             <NavLink title="projects" href="#projects" />
             <NavLink title="contact" href="#contact" />
           </NavBar>
+          <LocaleSwitcher />
           <main className={`px-8 relative pointer-events-none overflow-x-clip`}>
             {children}
           </main>
