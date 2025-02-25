@@ -22,5 +22,8 @@
     "p1_alt": "El logo y mapa de Veronte Ops",
     "p2_alt": "La estructura principal del Umbreacle de cerca",
     "p3_alt": "El logo del juego sobre un fondo plano"
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, selecciona, fr {French} en {English} other {Unknown}}"
   }
 }

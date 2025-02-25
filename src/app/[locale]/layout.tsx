@@ -7,6 +7,7 @@ import NavBar from "../components/navbar/navbar";
 import "./global.css";
 import { Inter, Diphylleia } from "next/font/google";
 import Providers from "./providers";
+import { localeOptions } from "../static-info/localeOptions";
 
 // ---- METADATA
 export const metadata: Metadata = {
@@ -26,8 +27,9 @@ export const diphylleia = Diphylleia({
 });
 
 // ---- INTERNATIONALIZATION
+
 export async function generateStaticParams() {
-  return ["en", "es"].map((locale) => ({
+  return localeOptions.map((locale) => ({
     locale,
   }));
 }

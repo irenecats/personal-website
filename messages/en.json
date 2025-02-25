@@ -1,6 +1,6 @@
 {
   "Hero": {
-    "subtitle": "Ingeniera Multimedia Multimedia Engineer"
+    "subtitle": "Multimedia Engineer"
   },
   "About": {
     "about0": "Hi! I am Irene, a Spanish multimedia engineering graduate with more than 3 years of work experience as a Software Engineer. Recently moved to Shinjuku, I’m looking for new opportunities in Tokyo!",
@@ -22,5 +22,8 @@
     "p1_alt": "Veronte Ops world map and logo",
     "p2_alt": "Close up of the textures and main structure of the Umbracle project",
     "p3_alt": "The game's logo on top of a plain background"
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, select, fr {French} en {English} other {Unknown}}"
   }
 }
