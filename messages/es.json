@@ -4,9 +4,9 @@
   },
   "About": {
     "about0": "Hola! Soy Irene, graduada en Ingeniería Multimedia con más de 3 años de experiencia como ingeniera de Software. Hace poco me mudé a Shinjuku, por lo que estoy buscando nuevas oportunidades en Tokio!",
-    "about1": "Me apasiona el impacto de el medio digital en nuestro día a día y las diversas formas en las que la gente se relaciona con ello.",
-    "about2": "A parte de programar, en mi tiempo libre me gusta jugar a videojuegos acariciando a mi gata, el arte textil y aprender sobre historia de la moda.",
-    "about3": "He trabajado principalmente con Java and Angular usando Typescript, creando el UX de aplicaciones aeronáuticas. Sin embargo, siempre estoy dispuesta a adquirir nueva habilidades, actualmente me encuentro expandiendo mi Frontend tech stack.",
+    "about1": "Me apasiona el impacto del medio digital en nuestro día a día y las diversas formas en las que la gente se relaciona con ello.",
+    "about2": "Aparte de programar, en mi tiempo libre me gusta jugar a videojuegos acariciando a mi gata, el arte textil y aprender sobre la historia de la moda.",
+    "about3": "He trabajado principalmente con Java and Angular usando TypeScript, creando el UX de aplicaciones aeronáuticas. Sin embargo, siempre estoy dispuesta a adquirir nuevas habilidades. Actualmente, me encuentro expandiendo mi Front-End tech stack.",
     "download": "Descargar CV"
   },
   "Projects": {
@@ -16,14 +16,11 @@
     "p3_title": "Go! Go!! Robot Brawl",
     "p0_description": "Un sitio donde enseñar mis proyectos y habilidades. ¡Espero que os guste!",
     "p1_description": "Rol principal en el desarrollo y mantenimiento de más de 12 aplicaciones aeronáuticas en Java durante un gran punto de inflexión en la compañía al cambiar a un nuevo ecosistema. Estas aplicaciones se encargan de modificar los parámetros requeridos en cada fase de la configuración, calibrado y monitoreo del autopiloto.\n\nAdicionalmente, también trabajé en la aplicación web single-page, creando diferentes herramientas cartográficas para facilitar al usuario la creación de las misiones de vuelo y widgets para visualizar y monitorizar el status de la plataforma.",
-    "p2_description": "Para mi Trabajo de Fin de Grado, cree una experiencia cultural inmersiva en Unreal Engine.\n\nEl entorno está basado en La Ciudad de las Artes y las Ciencias de Valencia, España. En ella, el usuario puede andar por L'Umbracle y admirar las otras obras arquitectónicas del lugar mientras interactúa con diferentes puntos con información sobre el complejo.",
-    "p3_description": "Go! Go!! Robot Brawl es un juego de pelea con estilo cartoon desarrollado desde cero con C++ y OpenGL con un pequeño como parte del nuestro Proyecto Grupal Final de Grado.\n\nMi principal rol fue la creación del motor gráfico, shaders y mecánicas principales del juego, así como la planificación, documentación y el revisado de los diferentes sprints.\n\nPor nuestro trabajo, la Universidad de Alicante nos otorgó dos matrículas de honor en las asignaturas de Post-producción Digital y Gráficos por Computador.",
+    "p2_description": "Para mi Trabajo de Fin de Grado, cree una experiencia cultural inmersiva en Unreal Engine.\n\nEl entorno está basado en La Ciudad de las Artes y las Ciencias de Valencia, España. En ella, el usuario puede andar por L’Umbracle y admirar las otras obras arquitectónicas del lugar mientras interactúa con diferentes puntos con información sobre el complejo.",
+    "p3_description": "Go! Go!! Robot Brawl es un juego de pelea con estilo cartoon desarrollado desde cero con C++ y OpenGL con un pequeño como parte del nuestro Proyecto Grupal Final de Grado.\n\nMi principal rol fue la creación del motor gráfico, shaders y mecánicas principales del juego, así como la planificación, documentación y el revisado de los diferentes sprints.\n\nPor nuestro trabajo, la Universidad de Alicante nos otorgó dos matrículas de honor en las asignaturas de Postproducción Digital y Gráficos por Computador.",
     "p0_alt": "Efecto de fluido del fondo de la web con estrellas decorativas",
     "p1_alt": "El logo y mapa de Veronte Ops",
-    "p2_alt": "La estructura principal del Umbreacle de cerca",
+    "p2_alt": "La estructura principal de L’Umbracle de cerca",
     "p3_alt": "El logo del juego sobre un fondo plano"
-  },
-  "LocaleSwitcher": {
-    "locale": "{locale, selecciona, fr {French} en {English} other {Unknown}}"
   }
 }
