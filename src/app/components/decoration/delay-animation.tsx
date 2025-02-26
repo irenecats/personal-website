@@ -1,5 +1,5 @@
 import { RefObject, useEffect } from "react";
-import { randomInteger } from "../static-info/math-utils";
+import { randomInteger } from "../../static-info/math-utils";
 
 export default function useRandomDelayAnimation(
   reference: RefObject<SVGElement | null>,

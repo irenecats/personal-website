@@ -91,7 +91,7 @@
   filter: grayscale();
 }
 
-.paragraf ~ .paragraf {
+.paragraph ~ .paragraph {
   margin-top: 1rem;
 }
 
@@ -175,7 +175,7 @@
         opacity: 1;
         backdrop-filter: contrast(0.45) blur(3px);
       }
-      .paragraf {
+      .paragraph {
         animation: appear 400ms forwards;
       }
       .tag {
