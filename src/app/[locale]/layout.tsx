@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   description: "Generated with Next js",
 };
 // ---- FONTS
-export const inter = Inter({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
-export const diphylleia = Diphylleia({
+const diphylleia = Diphylleia({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-diphylleia",
@@ -29,9 +29,7 @@ export const diphylleia = Diphylleia({
 
 // ---- INTERNATIONALIZATION
 export async function generateStaticParams() {
-  return localeOptions.map((locale) => ({
-    locale,
-  }));
+  return localeOptions.map((value) => ({ locale: value }));
 }
 async function getMessages(locale: string) {
   const messageModule = await import(`../../../messages/${locale}.json`);
@@ -44,13 +42,13 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
   const messages = await getMessages(locale);
 
   return (
-    <html lang="en" className={`${inter.variable} ${diphylleia.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${diphylleia.variable}`}>
       <body
         className={`antialiased bg-[#071a45] text-[#dadfe2] overflow-x-clip`}
       >
